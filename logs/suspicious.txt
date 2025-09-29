@@ -1,0 +1,10 @@
+Normal text content here
+Found encoded string: dGhpcyBpcyBhIHRlc3QgbWVzc2FnZQ==
+Another line of normal content
+Potential payload: cG93ZXJzaGVsbCAtZSBieXBhc3M=
+Regular application data
+Base64 pattern: YWRtaW46cGFzc3dvcmQxMjM=
+System configuration line
+Encoded data: ZXZpbCBzY3JpcHQgY29udGVudA==
+More normal text
+Hidden string: c2VjcmV0IGluZm9ybWF0aW9u

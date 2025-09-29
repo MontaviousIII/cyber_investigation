@@ -1,0 +1,15 @@
+2024-01-15 10:00:00 INFO Application started successfully
+2024-01-15 10:01:23 DEBUG Connecting to database server at 192.168.1.50
+2024-01-15 10:02:34 INFO User john logged in from 192.168.1.105
+2024-01-15 10:03:45 ERROR Database connection failed: Connection refused
+2024-01-15 10:04:56 WARN Memory usage at 85%
+2024-01-15 10:05:12 INFO Processing request from 172.16.0.12
+2024-01-15 10:06:23 ERROR [ERROR] Connection refused to payment gateway
+2024-01-15 10:07:34 FATAL System critical error: Disk full
+2024-01-15 10:08:45 INFO User alice logged in from 192.168.1.15
+2024-01-15 10:09:56 ERROR Invalid API key provided by 10.0.0.55
+2024-01-15 10:10:12 WARN Suspicious activity detected from 203.0.113.45
+2024-01-15 10:11:23 INFO Data export completed successfully
+2024-01-15 10:12:34 ERROR [ERROR] Connection refused to cache server
+2024-01-15 10:13:45 WARN CPU usage at 90%
+2024-01-15 10:14:56 INFO User bob logged out

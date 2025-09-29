@@ -1,0 +1,15 @@
+Jan 15 09:45:23 server sshd[1234]: Accepted password for john from 192.168.1.105 port 52341 ssh2
+Jan 15 09:46:11 server sshd[1235]: Failed password for root from 10.0.0.55 port 43234 ssh2
+Jan 15 09:47:33 server sshd[1236]: Failed password for admin from 10.0.0.55 port 43235 ssh2
+Jan 15 09:48:44 server sshd[1237]: Accepted publickey for alice from 192.168.1.15 port 52342 ssh2
+Jan 15 09:49:55 server sshd[1238]: Failed password for oracle from 203.0.113.45 port 41234 ssh2
+Jan 15 09:50:11 server sshd[1239]: Failed password for postgres from 203.0.113.45 port 41235 ssh2
+Jan 15 09:51:22 server sshd[1240]: Failed password for mysql from 10.0.0.55 port 43236 ssh2
+Jan 15 09:52:33 server sshd[1241]: Accepted password for bob from 192.168.1.222 port 52343 ssh2
+Jan 15 09:53:44 server sshd[1242]: Failed password for test from 10.0.0.55 port 43237 ssh2
+Jan 15 09:54:55 server sshd[1243]: Failed password for guest from 203.0.113.45 port 41236 ssh2
+Jan 15 09:55:11 server sshd[1244]: Failed password for admin from 192.168.1.99 port 52344 ssh2
+Jan 15 09:56:22 server sshd[1245]: Accepted password for john from 192.168.1.105 port 52345 ssh2
+Jan 15 09:57:33 server sshd[1246]: Failed password for root from 10.0.0.55 port 43238 ssh2
+Jan 15 09:58:44 server sshd[1247]: Failed password for administrator from 10.0.0.55 port 43239 ssh2
+Jan 15 09:59:55 server sshd[1248]: Accepted password for alice from 192.168.1.15 port 52346 ssh2
