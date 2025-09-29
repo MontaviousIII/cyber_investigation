@@ -13,3 +13,56 @@ Jan 15 09:56:22 server sshd[1245]: Accepted password for john from 192.168.1.105
 Jan 15 09:57:33 server sshd[1246]: Failed password for root from 10.0.0.55 port 43238 ssh2
 Jan 15 09:58:44 server sshd[1247]: Failed password for administrator from 10.0.0.55 port 43239 ssh2
 Jan 15 09:59:55 server sshd[1248]: Accepted password for alice from 192.168.1.15 port 52346 ssh2
+Jan 15 10:00:11 server sshd[1249]: Failed password for ubuntu from 198.51.100.88 port 44123 ssh2
+Jan 15 10:01:22 server sshd[1250]: Failed password for pi from 203.0.113.45 port 41237 ssh2
+Jan 15 10:02:33 server sshd[1251]: Accepted publickey for deploy from 192.168.50.201 port 52347 ssh2
+Jan 15 10:03:44 server sshd[1252]: Failed password for root from 198.51.100.88 port 44124 ssh2
+Jan 15 10:04:55 server sshd[1253]: Failed password for vagrant from 10.0.0.55 port 43240 ssh2
+Jan 15 10:05:11 server sshd[1254]: Accepted password for john from 192.168.1.105 port 52348 ssh2
+Jan 15 10:06:22 server sshd[1255]: Failed password for tomcat from 203.0.113.45 port 41238 ssh2
+Jan 15 10:07:33 server sshd[1256]: Failed password for jenkins from 198.51.100.88 port 44125 ssh2
+Jan 15 10:08:44 server sshd[1257]: Accepted password for bob from 192.168.1.222 port 52349 ssh2
+Jan 15 10:09:55 server sshd[1258]: Failed password for minecraft from 10.0.0.55 port 43241 ssh2
+Jan 15 10:10:11 server sudo[1259]: john : TTY=pts/0 ; PWD=/home/john ; USER=root ; COMMAND=/bin/cat /etc/shadow
+Jan 15 10:11:22 server sudo[1260]: alice : TTY=pts/1 ; PWD=/home/alice ; USER=root ; COMMAND=/usr/bin/apt update
+Jan 15 10:12:33 server sshd[1261]: Failed password for ftpuser from 203.0.113.45 port 41239 ssh2
+Jan 15 10:13:44 server sshd[1262]: Accepted publickey for ci from 192.168.50.201 port 52350 ssh2
+Jan 15 10:14:55 server sshd[1263]: Failed password for redis from 198.51.100.88 port 44126 ssh2
+Jan 15 10:15:11 server sudo[1264]: bob : TTY=pts/2 ; PWD=/home/bob ; USER=root ; COMMAND=/bin/systemctl restart apache2
+Jan 15 10:16:22 server sshd[1265]: Failed password for nginx from 10.0.0.55 port 43242 ssh2
+Jan 15 10:17:33 server sshd[1266]: Failed password for elastic from 203.0.113.45 port 41240 ssh2
+Jan 15 10:18:44 server sshd[1267]: Accepted password for alice from 192.168.1.15 port 52351 ssh2
+Jan 15 10:19:55 server sudo[1268]: alice : TTY=pts/1 ; PWD=/var/www ; USER=root ; COMMAND=/bin/chown -R www-data logs/
+Jan 15 10:20:11 server sshd[1269]: Failed password for solr from 198.51.100.88 port 44127 ssh2
+Jan 15 10:21:22 server sshd[1270]: Failed password for backup from 10.0.0.55 port 43243 ssh2
+Jan 15 10:22:33 server sshd[1271]: Accepted publickey for deployer from 192.168.50.201 port 52352 ssh2
+Jan 15 10:23:44 server sshd[1272]: Failed password for cassandra from 203.0.113.45 port 41241 ssh2
+Jan 15 10:24:55 server sudo[1273]: john : TTY=pts/0 ; PWD=/var/log ; USER=root ; COMMAND=/bin/tail -f auth.log
+Jan 15 10:25:11 server sshd[1274]: Failed password for mongodb from 198.51.100.88 port 44128 ssh2
+Jan 15 10:26:22 server sshd[1275]: Failed password for kafka from 10.0.0.55 port 43244 ssh2
+Jan 15 10:27:33 server sshd[1276]: Accepted password for john from 192.168.1.105 port 52353 ssh2
+Jan 15 10:28:44 server sshd[1277]: Failed password for prometheus from 203.0.113.45 port 41242 ssh2
+Jan 15 10:29:55 server sshd[1278]: Failed password for grafana from 198.51.100.88 port 44129 ssh2
+Jan 15 10:30:11 server sudo[1279]: bob : TTY=pts/2 ; PWD=/opt/apps ; USER=root ; COMMAND=/bin/docker ps -a
+Jan 15 10:31:22 server sshd[1280]: Failed password for rabbitmq from 10.0.0.55 port 43245 ssh2
+Jan 15 10:32:33 server sshd[1281]: Accepted publickey for gitops from 192.168.50.201 port 52354 ssh2
+Jan 15 10:33:44 server sshd[1282]: Failed password for airflow from 203.0.113.45 port 41243 ssh2
+Jan 15 10:34:55 server sshd[1283]: Failed password for spark from 198.51.100.88 port 44130 ssh2
+Jan 15 10:35:11 server sudo[1284]: alice : TTY=pts/1 ; PWD=/etc ; USER=root ; COMMAND=/usr/bin/vim sshd_config
+Jan 15 10:36:22 server sshd[1285]: Failed password for hadoop from 10.0.0.55 port 43246 ssh2
+Jan 15 10:37:33 server sshd[1286]: Accepted password for bob from 192.168.1.222 port 52355 ssh2
+Jan 15 10:38:44 server sshd[1287]: Failed password for zookeeper from 203.0.113.45 port 41244 ssh2
+Jan 15 10:39:55 server sudo[1288]: john : TTY=pts/0 ; PWD=/home/john ; USER=root ; COMMAND=/bin/bash
+Jan 15 10:40:11 server sshd[1289]: Failed password for memcached from 198.51.100.88 port 44131 ssh2
+Jan 15 10:41:22 server sshd[1290]: Failed password for influxdb from 10.0.0.55 port 43247 ssh2
+Jan 15 10:42:33 server sshd[1291]: Accepted publickey for automation from 192.168.50.201 port 52356 ssh2
+Jan 15 10:43:44 server sshd[1292]: Failed password for couchdb from 203.0.113.45 port 41245 ssh2
+Jan 15 10:44:55 server sudo[1293]: bob : TTY=pts/2 ; PWD=/var/backups ; USER=root ; COMMAND=/bin/ls -lah
+Jan 15 10:45:11 server sshd[1294]: Failed password for haproxy from 198.51.100.88 port 44132 ssh2
+Jan 15 10:46:22 server sshd[1295]: Accepted password for alice from 192.168.1.15 port 52357 ssh2
+Jan 15 10:47:33 server sshd[1296]: Failed password for consul from 10.0.0.55 port 43248 ssh2
+Jan 15 10:48:44 server sshd[1297]: Failed password for vault from 203.0.113.45 port 41246 ssh2
+Jan 15 10:49:55 server sudo[1297]: alice : TTY=pts/1 ; PWD=/tmp ; USER=root ; COMMAND=/bin/rm -rf temp_files/
+Jan 15 10:50:11 server sshd[1298]: Failed password for nomad from 198.51.100.88 port 44133 ssh2
+Jan 15 10:51:22 server sshd[1299]: Accepted password for john from 192.168.1.105 port 52358 ssh2
+Jan 15 10:52:33 server sshd[1300]: Failed password for etcd from 10.0.0.55 port 43249 ssh2

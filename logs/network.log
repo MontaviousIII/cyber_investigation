@@ -1,10 +1,62 @@
-2024-01-15 10:00:00 Connection established: 192.168.1.105:54234 -> 93.184.216.34:443
-2024-01-15 10:01:15 Connection established: 10.0.0.55:43234 -> 192.168.1.1:22
-2024-01-15 10:02:30 Connection dropped: 172.16.0.12:52345 -> 8.8.8.8:53
-2024-01-15 10:03:45 Connection established: 192.168.1.222:54235 -> 192.168.1.50:3306
-2024-01-15 10:05:00 Suspicious scan detected from 203.0.113.45
-2024-01-15 10:06:15 Connection established: 192.168.1.15:54236 -> 172.217.16.142:443
-2024-01-15 10:07:30 Port scan detected: 10.0.0.55 -> 192.168.1.1:1-65535
-2024-01-15 10:08:45 Connection established: 192.168.1.105:54237 -> 192.168.1.50:5432
-2024-01-15 10:10:00 Connection timeout: 172.16.0.99:52346 -> 10.10.10.10:80
-2024-01-15 10:11:15 Connection established: 192.168.1.15:54238 -> 52.84.228.25:443
+2024-01-15 10:00:00.123 Connection established: 192.168.1.105:54234 -> 93.184.216.34:443 (TLS1.3)
+2024-01-15 10:01:15.456 Connection established: 10.0.0.55:43234 -> 192.168.1.1:22 (SSH)
+2024-01-15 10:02:30.789 Connection dropped: 172.16.0.12:52345 -> 8.8.8.8:53 (DNS query timeout)
+2024-01-15 10:03:45.012 Connection established: 192.168.1.222:54235 -> 192.168.1.50:3306 (MySQL)
+2024-01-15 10:05:00.345 Suspicious scan detected from 203.0.113.45: TCP SYN flood to 192.168.1.0/24
+2024-01-15 10:06:15.678 Connection established: 192.168.1.15:54236 -> 172.217.16.142:443 (HTTPS)
+2024-01-15 10:07:30.901 Port scan detected: 10.0.0.55 -> 192.168.1.1:1-65535 (nmap aggressive scan)
+2024-01-15 10:08:45.234 Connection established: 192.168.1.105:54237 -> 192.168.1.50:5432 (PostgreSQL)
+2024-01-15 10:10:00.567 Connection timeout: 172.16.0.99:52346 -> 10.10.10.10:80 (no response after 30s)
+2024-01-15 10:11:15.890 Connection established: 192.168.1.15:54238 -> 52.84.228.25:443 (TLS1.2)
+2024-01-15 10:12:30.123 UDP flood detected: 203.0.113.45 -> 192.168.1.100:53 (15,234 packets/sec)
+2024-01-15 10:13:45.456 Connection established: 192.168.50.201:54239 -> 192.168.1.60:6379 (Redis)
+2024-01-15 10:14:55.789 ICMP ping sweep: 198.51.100.88 scanning 192.168.1.0/24 (254 hosts)
+2024-01-15 10:16:10.012 Connection established: 192.168.1.105:54240 -> 142.250.185.46:443 (QUIC)
+2024-01-15 10:17:25.345 ARP spoofing detected: MAC 00:11:22:33:44:55 claiming IP 192.168.1.1
+2024-01-15 10:18:40.678 Connection established: 10.0.0.55:43250 -> 192.168.1.1:445 (SMB)
+2024-01-15 10:19:55.901 DNS tunneling suspected: 192.168.1.222 -> 8.8.8.8:53 (unusual query patterns)
+2024-01-15 10:21:10.234 Connection established: 192.168.1.15:54241 -> 44.231.114.42:443 (AWS S3)
+2024-01-15 10:22:25.567 HTTPS connection with invalid cert: 10.0.0.55 -> 192.168.1.50:443 (self-signed)
+2024-01-15 10:23:40.890 Connection established: 172.16.0.12:54242 -> 192.168.1.70:27017 (MongoDB)
+2024-01-15 10:24:55.123 DDoS attack detected: multiple sources targeting 192.168.1.100:80 (50Gbps)
+2024-01-15 10:26:10.456 Connection established: 192.168.1.105:54243 -> 34.117.186.192:443 (GCP)
+2024-01-15 10:27:25.789 BGP route hijacking detected: AS64512 announcing 192.168.0.0/16
+2024-01-15 10:28:40.012 Connection dropped: 198.51.100.88:44150 -> 192.168.1.1:22 (RST after auth failure)
+2024-01-15 10:29:55.345 Connection established: 192.168.50.201:54244 -> 192.168.1.80:9200 (Elasticsearch)
+2024-01-15 10:31:10.678 SSL/TLS downgrade attempt: 10.0.0.55 requesting TLS1.0 to 192.168.1.50:443
+2024-01-15 10:32:25.901 Connection established: 192.168.1.15:54245 -> 20.190.151.131:443 (Azure)
+2024-01-15 10:33:40.234 Fragmented packet attack: 203.0.113.45 sending tiny fragments to 192.168.1.1
+2024-01-15 10:34:55.567 Connection established: 192.168.1.222:54246 -> 192.168.1.90:5672 (RabbitMQ)
+2024-01-15 10:36:10.890 IPv6 neighbor discovery flood: fe80::1 -> ff02::1 (10,000 packets)
+2024-01-15 10:37:25.123 Connection established: 172.16.0.99:54247 -> 13.107.42.14:443 (Office365)
+2024-01-15 10:38:40.456 TCP null scan detected: 10.0.0.55 -> 192.168.1.0/24 (all flags unset)
+2024-01-15 10:39:55.789 Connection established: 192.168.1.105:54248 -> 151.101.1.140:443 (CDN)
+2024-01-15 10:41:10.012 Rogue DHCP server detected: 10.0.0.55 offering leases on network
+2024-01-15 10:42:25.345 Connection dropped: 203.0.113.45:41300 -> 192.168.1.50:3306 (blocked by firewall)
+2024-01-15 10:43:40.678 Connection established: 192.168.50.201:54249 -> 192.168.1.110:2181 (Zookeeper)
+2024-01-15 10:44:55.901 SYN-ACK flood: 198.51.100.88 -> 192.168.1.100 (spoofed source IPs)
+2024-01-15 10:46:10.234 Connection established: 192.168.1.15:54250 -> 104.16.132.229:443 (Cloudflare)
+2024-01-15 10:47:25.567 VLAN hopping attempt detected: 10.0.0.55 sending double-tagged frames
+2024-01-15 10:48:40.890 Connection established: 192.168.1.105:54251 -> 192.168.1.120:11211 (Memcached)
+2024-01-15 10:49:55.123 MAC flooding: 203.0.113.45 sending frames with 1000+ unique source MACs
+2024-01-15 10:51:10.456 Connection established: 172.16.0.12:54252 -> 35.244.181.201:443 (Firebase)
+2024-01-15 10:52:25.789 IP spoofing detected: packets from 8.8.8.8 originating inside network
+2024-01-15 10:53:40.012 Connection established: 192.168.1.222:54253 -> 192.168.1.130:9092 (Kafka)
+2024-01-15 10:54:55.345 Land attack detected: 10.0.0.55 sending packets with same src/dst IP
+2024-01-15 10:56:10.678 Connection established: 192.168.50.201:54254 -> 192.168.1.140:8086 (InfluxDB)
+2024-01-15 10:57:25.901 Christmas tree scan: 198.51.100.88 -> 192.168.1.0/24 (all TCP flags set)
+2024-01-15 10:58:40.234 Connection established: 192.168.1.15:54255 -> 157.240.22.35:443 (Facebook)
+2024-01-15 10:59:55.567 Smurf attack detected: ICMP echo to broadcast 192.168.1.255 from spoofed src
+2024-01-15 11:01:10.890 Connection established: 192.168.1.105:54256 -> 192.168.1.150:5601 (Kibana)
+2024-01-15 11:02:25.123 FIN scan detected: 10.0.0.55 -> 192.168.1.1:1-1024 (FIN flag only)
+2024-01-15 11:03:40.456 Connection established: 172.16.0.99:54257 -> 54.230.159.24:443 (CloudFront)
+2024-01-15 11:04:55.789 Teardrop attack: 203.0.113.45 sending overlapping IP fragments
+2024-01-15 11:06:10.012 Connection established: 192.168.1.222:54258 -> 192.168.1.160:8500 (Consul)
+2024-01-15 11:07:25.345 GRE tunnel detected: 10.0.0.55 encapsulating traffic to external host
+2024-01-15 11:08:40.678 Connection established: 192.168.50.201:54259 -> 192.168.1.170:8200 (Vault)
+2024-01-15 11:09:55.901 Slowloris attack: 198.51.100.88 holding 500 partial HTTP connections to 192.168.1.100:80
+2024-01-15 11:11:10.234 Connection established: 192.168.1.15:54260 -> 13.32.89.12:443 (Amazon CloudFront)
+2024-01-15 11:12:25.567 NTP amplification attack: reflector 198.51.100.88 amplifying to 192.168.1.100
+2024-01-15 11:13:40.890 Connection established: 192.168.1.105:54261 -> 192.168.1.180:3000 (Grafana)
+2024-01-15 11:14:55.123 Covert channel detected: 10.0.0.55 using ICMP payload for data exfiltration
+2024-01-15 11:16:10.456 Connection dropped: 203.0.113.45:41400 -> 192.168.1.1:23 (Telnet blocked by policy)

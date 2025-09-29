@@ -72,7 +72,7 @@ check_answer() {
 }
 
 score=0
-total=10
+total=20
 
 echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
 echo -e "${YELLOW}LEVEL 1: BASIC GREP CHALLENGES${NC}"
@@ -160,6 +160,100 @@ check_answer 10 "$answer" "2" "Detect non-GET HTTP methods" "grep -P '(POST|PUT|
 score=$((score + $?))
 
 echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+echo -e "${YELLOW}LEVEL 5: ADVANCED REGEX MASTERY${NC}"
+echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}\n"
+
+# Challenge 11
+echo "Challenge 11: Extract all email addresses from suspicious.txt and count unique domains"
+if [ "$SHOW_HINTS" == true ]; then
+    echo -e "${CYAN}Match email pattern, extract domain after @, count unique${NC}"
+fi
+read -p "Enter count: " answer
+check_answer 11 "$answer" "4" "Extract and count unique email domains" "grep -oP '[a-zA-Z0-9._%+-]+@\\K[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}' suspicious.txt | sort -u | wc -l"
+score=$((score + $?))
+
+# Challenge 12
+echo "Challenge 12: How many lines contain phone numbers in any format in suspicious.txt?"
+if [ "$SHOW_HINTS" == true ]; then
+    echo -e "${CYAN}Match patterns like +1-555-0123, (555) 456-7890, 555.234.5678${NC}"
+fi
+read -p "Enter count: " answer
+check_answer 12 "$answer" "3" "Match various phone number formats" "grep -P '(\\+\\d{1,2}[- ])?\\(?(\\d{3})\\)?[- .]?(\\d{3})[- .]?(\\d{4})' suspicious.txt | wc -l"
+score=$((score + $?))
+
+# Challenge 13
+echo "Challenge 13: Count lines with IPv6 addresses in suspicious.txt"
+if [ "$SHOW_HINTS" == true ]; then
+    echo -e "${CYAN}IPv6 has format like 2001:0db8:85a3::8a2e:0370:7334${NC}"
+fi
+read -p "Enter count: " answer
+check_answer 13 "$answer" "1" "Detect IPv6 address patterns" "grep -P '([0-9a-fA-F]{0,4}:){2,7}[0-9a-fA-F]{0,4}' suspicious.txt | wc -l"
+score=$((score + $?))
+
+# Challenge 14
+echo "Challenge 14: Find lines containing JWT tokens (starting with eyJ) in suspicious.txt"
+if [ "$SHOW_HINTS" == true ]; then
+    echo -e "${CYAN}JWT tokens start with eyJ and contain base64-like characters${NC}"
+fi
+read -p "Enter count: " answer
+check_answer 14 "$answer" "1" "Match JWT token pattern" "grep -P 'eyJ[A-Za-z0-9_-]+\\.[A-Za-z0-9_-]+' suspicious.txt | wc -l"
+score=$((score + $?))
+
+# Challenge 15
+echo "Challenge 15: Count lines in suspicious.txt with MD5 or SHA256 hashes"
+if [ "$SHOW_HINTS" == true ]; then
+    echo -e "${CYAN}MD5 is 32 hex chars, SHA256 is 64 hex chars${NC}"
+fi
+read -p "Enter count: " answer
+check_answer 15 "$answer" "2" "Match cryptographic hash patterns" "grep -P '\\b[a-f0-9]{32}\\b|\\b[a-f0-9]{64}\\b' suspicious.txt | wc -l"
+score=$((score + $?))
+
+# Challenge 16
+echo "Challenge 16: How many unique attack techniques mentioned in network.log?"
+if [ "$SHOW_HINTS" == true ]; then
+    echo -e "${CYAN}Look for 'attack' or 'scan' keywords, extract technique names${NC}"
+fi
+read -p "Enter count: " answer
+check_answer 16 "$answer" "15" "Extract attack technique names" "grep -oP '(\\w+\\s)+(attack|scan|flood|spoofing|hijacking|injection)' network.log | sort -u | wc -l"
+score=$((score + $?))
+
+# Challenge 17
+echo "Challenge 17: Count connections in network.log using TLS version 1.2 or 1.3"
+if [ "$SHOW_HINTS" == true ]; then
+    echo -e "${CYAN}Match TLS1.2 or TLS1.3 in the log entries${NC}"
+fi
+read -p "Enter count: " answer
+check_answer 17 "$answer" "2" "Match specific TLS versions" "grep -P 'TLS1\\.(2|3)' network.log | wc -l"
+score=$((score + $?))
+
+# Challenge 18
+echo "Challenge 18: Find all lines in application.log with timestamps between 10:50 and 11:10"
+if [ "$SHOW_HINTS" == true ]; then
+    echo -e "${CYAN}Match time pattern HH:MM where hour is 10 (minutes 50-59) or 11 (minutes 00-10)${NC}"
+fi
+read -p "Enter count: " answer
+check_answer 18 "$answer" "13" "Match time range with regex" "grep -P '(10:5[0-9]|11:0[0-9]|11:10):' application.log | wc -l"
+score=$((score + $?))
+
+# Challenge 19
+echo "Challenge 19: Count unique MAC addresses in suspicious.txt"
+if [ "$SHOW_HINTS" == true ]; then
+    echo -e "${CYAN}MAC format: XX:XX:XX:XX:XX:XX or XX-XX-XX-XX-XX-XX${NC}"
+fi
+read -p "Enter count: " answer
+check_answer 19 "$answer" "3" "Extract and count unique MAC addresses" "grep -oP '([0-9A-Fa-f]{2}[:-]){5}[0-9A-Fa-f]{2}' suspicious.txt | sort -u | wc -l"
+score=$((score + $?))
+
+# Challenge 20
+echo "Challenge 20: Find the most common HTTP status code in access.log"
+if [ "$SHOW_HINTS" == true ]; then
+    echo -e "${CYAN}Status codes are 3-digit numbers after the HTTP version${NC}"
+fi
+read -p "Enter status code: " answer
+check_answer 20 "$answer" "200" "Extract and find most frequent status code" "grep -oP 'HTTP/\\d\\.\\d\" \\K\\d{3}' access.log | sort | uniq -c | sort -rn | head -1 | awk '{print \$2}'"
+score=$((score + $?))
+
+echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
 echo -e "${BLUE}                    FINAL SCORE                              ${NC}"
 echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
 
@@ -168,9 +262,9 @@ if [ $score -eq $total ]; then
     if [ "$SHOW_HINTS" == false ]; then
         echo -e "${GREEN}🏆 ACHIEVEMENT: Perfect score in EXPERT MODE! Outstanding!${NC}"
     fi
-elif [ $score -ge 8 ]; then
+elif [ $score -ge 16 ]; then
     echo -e "${GREEN}Great job! $score/$total - Almost there, practice the missed ones.${NC}"
-elif [ $score -ge 6 ]; then
+elif [ $score -ge 12 ]; then
     echo -e "${YELLOW}Good progress! $score/$total - Review grep flags and pipelines.${NC}"
 else
     echo -e "${RED}Keep practicing! $score/$total - Review the basics and try again.${NC}"
