@@ -368,6 +368,8 @@ grep -P '\d+' file.log
 - `grep --help` - Quick reference
 - `man regex` - Regex syntax
 - regex101.com - Test patterns online (use PCRE/PHP flavor for `-P`)
+- regexone.com - Different syntax but same foundations
+- cmdchallenge.com - Similar to this, more basic challenges
 
 ## Notes
 
