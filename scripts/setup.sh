@@ -3,14 +3,14 @@
 # Save this as: setup_investigation.sh
 # Run with: bash setup_investigation.sh
 
-echo "🔧 Setting up Cyber Investigation Training Environment..."
+echo " Setting up Cyber Investigation Training Environment..."
 
 # Create directory structure
 mkdir -p ~/cyber_investigation/{logs,challenges,scripts}
 cd ~/cyber_investigation
 
 # Create sample log files
-echo "📝 Creating sample log files..."
+echo " Creating sample log files..."
 
 # 1. Access.log - Web server logs
 cat > logs/access.log << 'EOF'
@@ -97,4 +97,4 @@ cat > logs/network.log << 'EOF'
 2024-01-15 10:11:15 Connection established: 192.168.1.15:54238 -> 52.84.228.25:443
 EOF
 
-echo "✅ Log files created successfully!"
+echo " Log files created successfully!"

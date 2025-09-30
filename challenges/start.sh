@@ -15,7 +15,7 @@ cd ~/cyber_investigation/logs
 
 clear
 echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
-echo -e "${BLUE}    🔍 CYBER INVESTIGATION CHALLENGE SYSTEM 🔍${NC}"
+echo -e "${BLUE}     CYBER INVESTIGATION CHALLENGE SYSTEM ${NC}"
 echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}\n"
 
 # Ask about hints
@@ -30,10 +30,10 @@ read -p "Enter your choice (1 or 2): " hint_choice
 # Set hints flag
 if [ "$hint_choice" == "1" ]; then
     SHOW_HINTS=true
-    echo -e "\n${GREEN}✓ Hints enabled - Commands will be shown${NC}\n"
+    echo -e "\n${GREEN} Hints enabled - Commands will be shown${NC}\n"
 else
     SHOW_HINTS=false
-    echo -e "\n${YELLOW}⚡ Expert mode - No hints!${NC}\n"
+    echo -e "\n${YELLOW} Expert mode - No hints!${NC}\n"
 fi
 
 echo -e "Press Enter to begin..."
@@ -65,18 +65,18 @@ prompt_and_check() {
 
         # Check if user wants to skip
         if [ "$user_answer" == "skip" ]; then
-            echo -e "\n${YELLOW}⏭️  SKIPPED${NC}"
+            echo -e "\n${YELLOW}  SKIPPED${NC}"
             sleep 1
             return 0
         fi
 
         # Check if answer is correct
         if [ "$user_answer" == "$expected" ]; then
-            echo -e "\n${GREEN}✅ CORRECT!${NC}"
+            echo -e "\n${GREEN} CORRECT!${NC}"
             sleep 1
             return 1
         else
-            echo -e "\n${RED}❌ INCORRECT - Try again${NC}"
+            echo -e "\n${RED} INCORRECT - Try again${NC}"
             sleep 1.5
         fi
     done
@@ -229,9 +229,9 @@ echo -e "${BLUE}                    FINAL SCORE                              ${N
 echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
 
 if [ $score -eq $total ]; then
-    echo -e "${GREEN}🎉 PERFECT SCORE! $score/$total - You're ready for the interview!${NC}"
+    echo -e "${GREEN} PERFECT SCORE! $score/$total - You're ready for the interview!${NC}"
     if [ "$SHOW_HINTS" == false ]; then
-        echo -e "${GREEN}🏆 ACHIEVEMENT: Perfect score in EXPERT MODE! Outstanding!${NC}"
+        echo -e "${GREEN} ACHIEVEMENT: Perfect score in EXPERT MODE! Outstanding!${NC}"
     fi
 elif [ $score -ge 16 ]; then
     echo -e "${GREEN}Great job! $score/$total - Almost there, practice the missed ones.${NC}"
@@ -256,7 +256,7 @@ echo "  awk '{print \$N}' : Extract Nth field"
 echo ""
 
 if [ "$SHOW_HINTS" == false ] && [ $score -lt $total ]; then
-    echo -e "${CYAN}💡 Tip: Run with hints enabled to see the commands for challenges you missed${NC}"
+    echo -e "${CYAN} Tip: Run with hints enabled to see the commands for challenges you missed${NC}"
 fi
 
 echo -e "\n${YELLOW}Run again? Just type: bash ~/cyber_investigation/challenges/start.sh${NC}"

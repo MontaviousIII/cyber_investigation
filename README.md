@@ -1,304 +1,390 @@
 # Cyber Investigation Practice Lab
 
-A comprehensive command-line forensics training environment designed to help you master network and log analysis skills for cybersecurity interviews and incident response scenarios.
+A comprehensive command-line forensics training environment for mastering network and log analysis skills for cybersecurity interviews and incident response scenarios.
 
-## 📋 Overview
+## Overview
 
-This repository contains realistic log files and progressive challenges that simulate real-world cybersecurity investigations. Practice grep, regex patterns, and shell pipelines in a safe, controlled environment.
+This repository contains realistic log files and 20 progressive challenges simulating real-world cybersecurity investigations. Practice grep, regex patterns, and shell pipelines in a safe, controlled environment.
 
-## 🎯 What You'll Learn
+**Key Features:**
+- 20 progressive challenges (basic to advanced)
+- 794+ realistic log entries across 5 files
+- War-game style training (no answers shown, retry until correct)
+- Dynamic answer validation
+- Hints mode for learning, Expert mode for testing
 
-- **grep mastery**: `-F` (fixed strings), `-P` (Perl regex), `-o` (extract), `-v` (invert), `-i` (case-insensitive)
-- **Advanced regex patterns**: Email extraction, IP address matching, hash detection, JWT tokens, and more
-- **Shell pipelines**: Combining commands with `|`, using `sort`, `uniq`, `wc`, `awk`, `head`, `tail`
-- **Log analysis**: HTTP access logs, SSH authentication logs, application logs, network traffic
-- **Security pattern recognition**: SQL injection, XSS, path traversal, brute force attacks, encoded payloads
+## Quick Start
 
-## 🚀 Quick Start
-
-### 1. Navigate to the logs directory
 ```bash
+# Navigate to logs directory
 cd ~/cyber_investigation/logs
-```
 
-### 2. Explore the log files
-```bash
-ls -lh                  # See available log files
-less access.log         # Browse web server logs
-less auth.log           # Review authentication attempts
-less application.log    # Check application errors
-less network.log        # Analyze network traffic
-less suspicious.txt     # Examine suspicious patterns
-```
+# Explore log files
+ls -lh
+less access.log         # Web server logs (164 entries)
+less auth.log           # SSH authentication (192 entries)
+less application.log    # Application errors (188 entries)
+less network.log        # Network traffic (128 entries)
+less suspicious.txt     # Suspicious patterns (122 entries)
 
-### 3. Practice freely
-Try commands on your own:
-```bash
+# Practice commands
 grep -F "192.168.1.105" access.log
 grep -P "Failed password" auth.log | wc -l
 grep -oP '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}' access.log | sort -u
-```
 
-### 4. Take the challenge
-```bash
+# Start challenges
 bash ~/cyber_investigation/challenges/start.sh
-```
 
-Choose between:
-- **Hints mode** (Recommended for first attempt) - Shows commands to guide you
-- **Expert mode** - Test your knowledge without hints
-
-### 5. Check solutions (if stuck)
-```bash
+# View solutions (if stuck)
 bash ~/cyber_investigation/challenges/solutions.sh
 ```
 
-## 📊 Challenge Breakdown
-
-### Level 1: Basic Grep Challenges (1-2)
-**Skills**: Fixed string search with `-F` flag
-- Finding specific IP addresses
-- Counting failed authentication attempts
-- Real-world application: Quickly locating specific indicators in logs
-
-### Level 2: Regex Pattern Matching (3-4)
-**Skills**: Perl regex with `-P` flag, multiple patterns
-- Extracting and counting unique IPs
-- Multi-pattern searches (ERROR|FATAL)
-- Real-world application: Pattern-based threat hunting
-
-### Level 3: Pipeline Mastery (5-6)
-**Skills**: Complex command pipelines
-- Identifying most active IPs
-- Detecting suspicious user agents
-- Real-world application: Aggregating and ranking security events
-
-### Level 4: Security Investigation (7-10)
-**Skills**: Security-focused analysis
-- SQL injection detection
-- Base64 encoded payload discovery
-- HTTP method analysis
-- User behavior analytics
-- Real-world application: Incident response and attack detection
-
-### Level 5: Advanced Regex Mastery (11-20)
-**Skills**: Complex regex patterns and data extraction
-- Email domain extraction and validation
-- Phone number format recognition
-- IPv6 address identification
-- JWT token detection
-- Cryptographic hash matching (MD5, SHA256)
-- Network attack taxonomy
-- TLS version analysis
-- Time-based log filtering
-- MAC address extraction
-- HTTP status code analysis
-- Real-world application: Advanced threat intelligence and forensic analysis
-
-## 📁 Repository Structure
+## Repository Structure
 
 ```
 cyber_investigation/
 ├── README.md                   # This file
-├── QUICK_REFERENCE.md          # One-page command reference
-├── ENHANCEMENTS.md             # Changelog and improvements
 ├── logs/                       # Training log files
-│   ├── access.log             # HTTP access logs (62+ entries)
-│   ├── auth.log               # SSH authentication logs (68+ entries)
-│   ├── application.log        # Application logs (70+ entries)
-│   ├── network.log            # Network traffic logs (62+ entries)
-│   └── suspicious.txt         # Suspicious patterns (54+ entries)
-├── challenges/                 # Challenge system
-│   ├── start.sh               # Interactive challenge runner
-│   └── solutions.sh           # Complete answer key
-└── scripts/                    # (Reserved for utility scripts)
+│   ├── access.log             # HTTP access logs (164 entries)
+│   ├── auth.log               # SSH authentication (192 entries)
+│   ├── application.log        # Application logs (188 entries)
+│   ├── network.log            # Network traffic (128 entries)
+│   └── suspicious.txt         # Suspicious patterns (122 entries)
+└── challenges/                 # Challenge system
+    ├── start.sh               # Interactive challenge runner
+    └── solutions.sh           # Complete answer key
 ```
 
-## 💡 Pro Tips for Interview Success
+## Challenge Breakdown
 
-### Essential Commands
+### Level 1: Basic Grep (Challenges 1-2)
+**Skills:** Fixed string search with `-F` flag
+- Finding specific IP addresses
+- Counting failed authentication attempts
+
+### Level 2: Regex Pattern Matching (Challenges 3-4)
+**Skills:** Perl regex with `-P` flag, multiple patterns
+- Extracting and counting unique IPs
+- Multi-pattern searches (ERROR|FATAL)
+
+### Level 3: Pipeline Mastery (Challenges 5-6)
+**Skills:** Complex command pipelines
+- Identifying most active IPs
+- Detecting suspicious user agents
+
+### Level 4: Security Investigation (Challenges 7-10)
+**Skills:** Security-focused analysis
+- SQL injection detection
+- Base64 encoded payload discovery
+- HTTP method analysis
+- User behavior analytics
+
+### Level 5: Advanced Regex Mastery (Challenges 11-20)
+**Skills:** Complex regex patterns and data extraction
+- Email domain extraction
+- Phone number format recognition
+- IPv6 address identification
+- JWT token detection
+- Cryptographic hash matching (MD5, SHA256)
+- Service name extraction using lookbehind/lookahead
+- TLS version analysis
+- Time-based log filtering
+- MAC address extraction
+- HTTP status code analysis
+
+## Challenge Quick Reference
+
+### Level 1: Basic Grep (1-2)
 ```bash
-# Count lines
-wc -l file.log
+# 1. Count specific IP
+grep -F '192.168.1.105' access.log | wc -l
 
-# Fixed string search (faster, literal)
-grep -F "exact string" file.log
-
-# Perl regex search (powerful patterns)
-grep -P "regex pattern" file.log
-
-# Extract only matching parts
-grep -oP '\d+\.\d+\.\d+\.\d+' file.log
-
-# Case-insensitive search
-grep -i "error" file.log
-
-# Invert match (exclude)
-grep -v "DEBUG" file.log
+# 2. Failed SSH attempts
+grep 'Failed password' auth.log | wc -l
 ```
 
-### Pipeline Patterns
+### Level 2: Regex Patterns (3-4)
 ```bash
-# Count occurrences and sort by frequency
-grep pattern file.log | sort | uniq -c | sort -rn
+# 3. Unique IPs
+grep -oP '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}' access.log | sort -u | wc -l
 
-# Get unique values only
-grep pattern file.log | sort -u
-
-# Extract specific field with awk
-grep pattern file.log | awk '{print $5}'
-
-# Limit output to top N results
-grep pattern file.log | sort | uniq -c | sort -rn | head -10
-
-# Chain multiple greps for precision
-grep "ERROR" file.log | grep -v "timeout" | grep "database"
+# 4. ERROR or FATAL
+grep -P 'ERROR|FATAL' application.log | wc -l
 ```
 
-### Regex Cheat Sheet
+### Level 3: Pipelines (5-6)
 ```bash
-# IP address (basic)
-\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}
+# 5. Most active IP
+grep -oP '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}' access.log | sort | uniq -c | sort -rn | head -1 | awk '{print $2}'
 
-# Email address
-[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}
-
-# Phone number (various formats)
-(\+\d{1,2}[- ])?\(?\d{3}\)?[- .]?\d{3}[- .]?\d{4}
-
-# Hexadecimal (MAC, hashes)
-[0-9A-Fa-f]{2}:[0-9A-Fa-f]{2}:...  # MAC address
-\b[a-f0-9]{32}\b                    # MD5 hash
-\b[a-f0-9]{64}\b                    # SHA256 hash
-
-# JWT token
-eyJ[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+
-
-# Time ranges
-10:5[0-9]:                          # 10:50-10:59
-11:0[0-9]:                          # 11:00-11:09
-
-# Alternation (OR)
-(ERROR|FATAL|CRITICAL)              # Match any
-(POST|PUT|DELETE|PATCH)             # HTTP methods
+# 6. Suspicious user agents
+grep -P 'curl|wget|python|scanner' access.log | wc -l
 ```
 
-## 🎓 Learning Path
+### Level 4: Security Analysis (7-10)
+```bash
+# 7. SQL injection attempts
+grep -P "(--|'|union|select)" access.log | wc -l
 
-### Beginner (Challenges 1-6)
-Focus on basic grep usage and simple patterns. Learn to use `-F` for literal strings and `-P` for basic regex. Practice counting and filtering.
+# 8. Base64 strings
+grep -P '[A-Za-z0-9+/]{20,}={0,2}' suspicious.txt | wc -l
 
-### Intermediate (Challenges 7-10)
-Apply grep to security scenarios. Learn to identify attack patterns like SQL injection, suspicious user agents, and non-standard HTTP methods.
+# 9. Most frequent login user
+grep 'Accepted' auth.log | grep -oP 'for \K\w+' | sort | uniq -c | sort -rn | head -1 | awk '{print $2}'
 
-### Advanced (Challenges 11-20)
-Master complex regex patterns. Extract structured data (emails, IPs, hashes), perform time-based analysis, and recognize attack taxonomies.
+# 10. Non-GET HTTP methods
+grep -P '(POST|PUT|DELETE)' access.log | grep -oP '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}' | sort -u | wc -l
+```
 
-## 🔍 Common Interview Questions
+### Level 5: Advanced Regex (11-20)
+```bash
+# 11. Email domains
+grep -oP '[a-zA-Z0-9._%+-]+@\K[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}' suspicious.txt | sort -u | wc -l
 
-This lab prepares you for questions like:
+# 12. Phone numbers
+grep -P '(\+\d{1,2}[- ])?\(?\d{3}\)?[- .]?\d{3}[- .]?\d{4}' suspicious.txt | wc -l
 
-1. **"Show me all failed login attempts from a specific IP"**
-   ```bash
-   grep "Failed password" auth.log | grep "10.0.0.55"
-   ```
+# 13. IPv6 addresses
+grep -oP '(\b([0-9a-fA-F]{4}:){7}[0-9a-fA-F]{4}\b|\b[0-9a-fA-F]{4}::[0-9a-fA-F]{1,4}\b)' suspicious.txt | wc -l
 
-2. **"What are the top 5 most active IP addresses?"**
-   ```bash
-   grep -oP '\d+\.\d+\.\d+\.\d+' access.log | sort | uniq -c | sort -rn | head -5
-   ```
+# 14. JWT tokens
+grep -P 'eyJ[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+' suspicious.txt | wc -l
 
-3. **"Find all POST requests that returned 500 errors"**
-   ```bash
-   grep "POST" access.log | grep "\" 500"
-   ```
+# 15. MD5 or SHA256 hashes
+grep -P '\b[a-f0-9]{32}\b|\b[a-f0-9]{64}\b' suspicious.txt | wc -l
 
-4. **"Extract all unique user agents accessing /admin"**
-   ```bash
-   grep "/admin" access.log | grep -oP '"[^"]+"\s*$' | sort -u
-   ```
+# 16. Service names in parentheses
+grep -oP '\(\K[A-Z][a-z]+(?=\)$)' network.log | sort -u | wc -l
 
-5. **"How many unique users successfully logged in?"**
-   ```bash
-   grep "Accepted" auth.log | grep -oP 'for \K\w+' | sort -u | wc -l
-   ```
+# 17. TLS 1.2 or 1.3
+grep -P 'TLS1\.(2|3)' network.log | wc -l
 
-## 🏆 Scoring System
+# 18. Time range 10:50-11:10
+grep -P '(10:5[0-9]|11:0[0-9]|11:10):' application.log | wc -l
 
-- **20/20**: Perfect score - Interview ready!
+# 19. Unique MAC addresses
+grep -oP '([0-9A-Fa-f]{2}[:-]){5}[0-9A-Fa-f]{2}' suspicious.txt | sort -u | wc -l
+
+# 20. Most common HTTP status
+grep -oP 'HTTP/\d\.\d" \K\d{3}' access.log | sort | uniq -c | sort -rn | head -1 | awk '{print $2}'
+```
+
+## Essential Grep Flags
+
+```bash
+-F    # Fixed string (literal, fastest)
+-P    # Perl regex (most powerful)
+-o    # Output only matching part
+-v    # Invert match (exclude)
+-i    # Case insensitive
+-c    # Count matches
+-n    # Show line numbers
+-A N  # Show N lines after match
+-B N  # Show N lines before match
+-C N  # Show N lines before and after
+```
+
+## Common Regex Patterns
+
+```bash
+\d              # Any digit [0-9]
+\w              # Any word character [a-zA-Z0-9_]
+\s              # Any whitespace
+.               # Any character
+^               # Start of line
+$               # End of line
+\b              # Word boundary
+\K              # Keep left, return right (lookbehind alternative)
+*               # 0 or more
++               # 1 or more
+?               # 0 or 1 (optional)
+{n}             # Exactly n
+{n,}            # n or more
+{n,m}           # Between n and m
+[abc]           # Character class (a, b, or c)
+[^abc]          # Negated class (not a, b, or c)
+(a|b)           # Alternation (a or b)
+```
+
+## Pipeline Patterns
+
+```bash
+# Count and rank
+... | sort | uniq -c | sort -rn
+
+# Unique only
+... | sort -u
+
+# Top N
+... | head -N
+
+# Extract field
+... | awk '{print $N}'
+
+# Chain filters
+grep X | grep -v Y | grep Z
+```
+
+## Real-World Examples
+
+```bash
+# Top 5 IPs by request count
+grep -oP '\d+\.\d+\.\d+\.\d+' access.log | sort | uniq -c | sort -rn | head -5
+
+# All errors from specific time range
+grep -P '11:[0-5][0-9]:' application.log | grep ERROR
+
+# Users who ran sudo
+grep sudo auth.log | grep -oP 'USER=root ; COMMAND=/\K.*' | sort -u
+
+# Attack IPs (multiple failed attempts)
+grep "Failed password" auth.log | grep -oP 'from \K\S+' | sort | uniq -c | sort -rn
+
+# Files accessed by scanning tools
+grep -P 'nikto|sqlmap|nmap|masscan' access.log | grep -oP '"[A-Z]+ \K[^"?]+' | sort -u
+
+# Successful vs failed login ratio
+echo "Success: $(grep -c 'Accepted' auth.log)"
+echo "Failed: $(grep -c 'Failed password' auth.log)"
+```
+
+## Interview Prep Checklist
+
+- [ ] Can explain what `-F`, `-P`, and `-o` do
+- [ ] Can write IP address regex from memory
+- [ ] Can build `sort | uniq -c | sort -rn` pipeline
+- [ ] Can extract specific fields with `awk`
+- [ ] Can use lookahead/lookbehind (`\K`)
+- [ ] Can chain multiple grep commands
+- [ ] Can explain when to use `-F` vs `-P`
+- [ ] Can read and explain others' grep commands
+- [ ] Can debug failed regex patterns
+- [ ] Can optimize slow grep commands
+
+## War-Game Style Challenge System
+
+The challenge system simulates incident response pressure:
+
+**Features:**
+- Get it wrong? Screen clears and question repeats
+- No answers shown - figure it out yourself
+- Keep trying until you get it right
+- Type `skip` if you need to move on
+- Clean screen on every question
+- Dynamic answer validation (commands run live)
+
+**Example Flow:**
+```
+Challenge 1: Count lines containing IP 192.168.1.105 in access.log
+
+Hint: Try this command: grep -F '192.168.1.105' access.log | wc -l
+
+Enter your answer (or 'skip' to skip): 3
+
+INCORRECT - Try again
+[Screen clears and question repeats]
+```
+
+## Scoring System
+
+- **20/20**: Perfect score - Interview ready
 - **16-19**: Great job - Practice missed challenges
 - **12-15**: Good progress - Review grep flags and pipelines
 - **0-11**: Keep practicing - Review the basics
 
-## 🛠️ Advanced Usage
+## Advanced Regex Techniques
 
-### Create custom challenges
-Add your own log entries to the files in `logs/` directory.
+- **Lookahead/Lookbehind**: `\K` to extract portions after match
+- **Character Classes**: `[a-zA-Z0-9._%+-]+` for email validation
+- **Quantifiers**: `{2,7}` for flexible matching
+- **Alternation**: `(ERROR|FATAL|CRITICAL)` for multi-pattern
+- **Word Boundaries**: `\b` for precise hash matching
+- **Non-capturing Groups**: `(?:...)` for grouping without capture
 
-### Test specific skills
+## Learning Path
+
+**Beginner (Challenges 1-6):** Focus on basic grep usage and simple patterns. Learn `-F` for literal strings and `-P` for basic regex. Practice counting and filtering.
+
+**Intermediate (Challenges 7-10):** Apply grep to security scenarios. Learn to identify attack patterns like SQL injection, suspicious user agents, and non-standard HTTP methods.
+
+**Advanced (Challenges 11-20):** Master complex regex patterns. Extract structured data (emails, IPs, hashes), perform time-based analysis, and use advanced assertions.
+
+## Pro Tips
+
+1. **Test incrementally**: Build pipelines one step at a time
+2. **Use less**: Pipe to `| less` to browse long output
+3. **Quote regex**: Use single quotes to avoid shell interpretation
+4. **Debug with -o**: Use `-o` to see exactly what matched
+5. **Count first**: Use `wc -l` to verify before processing large datasets
+6. **Time commands**: Prefix with `time` to measure performance
+
+## Common Mistakes
+
 ```bash
-# Practice only IP extraction
-grep -oP '\d+\.\d+\.\d+\.\d+' logs/*.log | less
+# Wrong: Forgets to escape dots
+grep -P '10.0.0.55' file.log    # Matches 10X0X0X55
 
-# Practice only error detection
-grep -P '(ERROR|FATAL|CRITICAL)' logs/*.log | less
+# Right: Escapes special characters
+grep -P '10\.0\.0\.55' file.log
 
-# Practice time-based filtering
-grep -P '10:[3-5][0-9]:' logs/application.log
+# Wrong: Double escaping in scripts
+echo "grep -P '\\d+' file"      # Prints grep -P '\d+'
+
+# Right: Single escape in command line
+grep -P '\d+' file.log
 ```
 
-### Pipeline debugging
-```bash
-# Test each step of a pipeline individually
-grep "pattern" file.log                          # Step 1
-grep "pattern" file.log | sort                   # Step 2
-grep "pattern" file.log | sort | uniq -c         # Step 3
-grep "pattern" file.log | sort | uniq -c | sort -rn  # Step 4
-```
+## Statistics
 
-## 📚 Additional Resources
+| Metric | Value |
+|--------|-------|
+| Total Challenges | 20 |
+| Total Log Entries | 794+ |
+| Log Files | 5 |
+| Regex Patterns Covered | 20+ |
+| Attack Types Simulated | 30+ |
 
-### Grep Documentation
+## Skills You'll Master
+
+1. Fixed string searches with `-F`
+2. Perl regex patterns with `-P`
+3. Output extraction with `-o`
+4. Complex pipelines with `sort | uniq -c | sort -rn`
+5. Field extraction with `awk`
+6. Pattern inversion with `-v`
+7. Case-insensitive matching with `-i`
+8. Lookahead and lookbehind assertions
+9. Character class construction
+10. Quantifier usage
+11. Alternation and grouping
+12. Time-based log filtering
+13. Attack pattern recognition
+14. Data extraction and validation
+15. Multi-stage data processing
+
+## Additional Resources
+
 - `man grep` - Full grep manual
 - `grep --help` - Quick reference
+- `man regex` - Regex syntax
+- regex101.com - Test patterns online (use PCRE/PHP flavor for `-P`)
 
-### Regex Testing
-- [regex101.com](https://regex101.com) - Test patterns online (use PCRE/PHP flavor for `-P`)
-- [regexr.com](https://regexr.com) - Interactive regex learning
-
-### Practice Files
-All log files contain realistic data patterns you'll encounter in production environments:
-- Web server access logs (Apache/Nginx format)
-- SSH authentication logs (syslog format)
-- Structured application logs (timestamp, level, message)
-- Network connection logs
-- Suspicious activity indicators
-
-## 🤝 Contributing
-
-Found a bug or want to add more challenges? Feel free to:
-1. Add more log entries to increase difficulty
-2. Create additional challenge scenarios
-3. Improve documentation
-
-## 📝 Notes
+## Notes
 
 - All IP addresses use RFC 5737 documentation ranges (safe, non-routable)
 - Log entries simulate realistic attack patterns for educational purposes
-- No actual malicious code or credentials are included
+- No actual malicious code or credentials included
 - Designed for offline practice - no network access required
 
-## 🎯 Next Steps
+## Next Steps
 
-1. **Run the challenges**: `bash ~/cyber_investigation/challenges/start.sh`
-2. **Complete all 20 challenges in Expert Mode**
-3. **Practice without looking at solutions**
-4. **Time yourself** - Can you complete all challenges in under 30 minutes?
-5. **Create your own challenges** by adding complex patterns to the logs
-6. **Interview with confidence!**
+1. Run the challenges: `bash ~/cyber_investigation/challenges/start.sh`
+2. Complete all 20 challenges in Expert Mode
+3. Practice without looking at solutions
+4. Time yourself - Can you complete all in under 30 minutes?
+5. Create your own challenges by adding patterns to the logs
+6. Interview with confidence
 
 ---
 
-**Good luck with your interview preparation! 🚀**
-
-*Remember: The goal isn't just to find the answer, but to understand the command and be able to explain it during an interview.*
+Remember: The goal isn't just to find the answer, but to understand the command and be able to explain it during an interview.

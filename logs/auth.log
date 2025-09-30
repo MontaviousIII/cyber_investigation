@@ -66,3 +66,128 @@ Jan 15 10:49:55 server sudo[1297]: alice : TTY=pts/1 ; PWD=/tmp ; USER=root ; CO
 Jan 15 10:50:11 server sshd[1298]: Failed password for nomad from 198.51.100.88 port 44133 ssh2
 Jan 15 10:51:22 server sshd[1299]: Accepted password for john from 192.168.1.105 port 52358 ssh2
 Jan 15 10:52:33 server sshd[1300]: Failed password for etcd from 10.0.0.55 port 43249 ssh2
+Jan 15 10:53:44 server sshd[1301]: Failed password for root from 10.0.0.55 port 43250 ssh2
+Jan 15 10:54:55 server sshd[1302]: Accepted password for john from 192.168.1.105 port 52359 ssh2
+Jan 15 10:55:11 server sshd[1303]: Failed password for admin from 203.0.113.45 port 41247 ssh2
+Jan 15 10:56:22 server sshd[1304]: Failed password for user from 198.51.100.88 port 44134 ssh2
+Jan 15 10:57:33 server sshd[1305]: Accepted publickey for ansible from 192.168.50.201 port 52360 ssh2
+Jan 15 10:58:44 server sshd[1306]: Failed password for support from 10.0.0.55 port 43251 ssh2
+Jan 15 10:59:55 server sudo[1307]: john : TTY=pts/0 ; PWD=/etc/nginx ; USER=root ; COMMAND=/usr/sbin/nginx -t
+Jan 15 11:00:11 server sshd[1308]: Failed password for webmaster from 203.0.113.45 port 41248 ssh2
+Jan 15 11:01:22 server sshd[1309]: Accepted password for bob from 192.168.1.222 port 52361 ssh2
+Jan 15 11:02:33 server sshd[1310]: Failed password for sysadmin from 198.51.100.88 port 44135 ssh2
+Jan 15 11:03:44 server sshd[1311]: Failed password for ftp from 10.0.0.55 port 43252 ssh2
+Jan 15 11:04:55 server sudo[1312]: alice : TTY=pts/1 ; PWD=/var/log ; USER=root ; COMMAND=/bin/grep ERROR application.log
+Jan 15 11:05:11 server sshd[1313]: Failed password for apache from 203.0.113.45 port 41249 ssh2
+Jan 15 11:06:22 server sshd[1314]: Accepted password for alice from 192.168.1.15 port 52362 ssh2
+Jan 15 11:07:33 server sshd[1315]: Failed password for git from 198.51.100.88 port 44136 ssh2
+Jan 15 11:08:44 server sshd[1316]: Failed password for docker from 10.0.0.55 port 43253 ssh2
+Jan 15 11:09:55 server sudo[1317]: bob : TTY=pts/2 ; PWD=/home/bob ; USER=root ; COMMAND=/bin/kill -9 12345
+Jan 15 11:10:11 server sshd[1318]: Failed password for postfix from 203.0.113.45 port 41250 ssh2
+Jan 15 11:11:22 server sshd[1319]: Accepted publickey for jenkins from 192.168.50.201 port 52363 ssh2
+Jan 15 11:12:33 server sshd[1320]: Failed password for nagios from 198.51.100.88 port 44137 ssh2
+Jan 15 11:13:44 server sshd[1321]: Failed password for icinga from 10.0.0.55 port 43254 ssh2
+Jan 15 11:14:55 server sshd[1322]: Accepted password for john from 192.168.1.105 port 52364 ssh2
+Jan 15 11:15:11 server sudo[1323]: john : TTY=pts/0 ; PWD=/var/www/html ; USER=root ; COMMAND=/bin/chmod 755 uploads/
+Jan 15 11:16:22 server sshd[1324]: Failed password for zabbix from 203.0.113.45 port 41251 ssh2
+Jan 15 11:17:33 server sshd[1325]: Failed password for splunk from 198.51.100.88 port 44138 ssh2
+Jan 15 11:18:44 server sshd[1326]: Accepted password for alice from 192.168.1.15 port 52365 ssh2
+Jan 15 11:19:55 server sshd[1327]: Failed password for elastic from 10.0.0.55 port 43255 ssh2
+Jan 15 11:20:11 server sudo[1328]: alice : TTY=pts/1 ; PWD=/opt ; USER=root ; COMMAND=/bin/tar -czf backup.tar.gz data/
+Jan 15 11:21:22 server sshd[1329]: Failed password for logstash from 203.0.113.45 port 41252 ssh2
+Jan 15 11:22:33 server sshd[1330]: Accepted password for bob from 192.168.1.222 port 52366 ssh2
+Jan 15 11:23:44 server sshd[1331]: Failed password for kibana from 198.51.100.88 port 44139 ssh2
+Jan 15 11:24:55 server sshd[1332]: Failed password for beats from 10.0.0.55 port 43256 ssh2
+Jan 15 11:25:11 server sudo[1333]: bob : TTY=pts/2 ; PWD=/root ; USER=root ; COMMAND=/bin/su - jenkins
+Jan 15 11:26:22 server sshd[1334]: Failed password for filebeat from 203.0.113.45 port 41253 ssh2
+Jan 15 11:27:33 server sshd[1335]: Accepted publickey for terraform from 192.168.50.201 port 52367 ssh2
+Jan 15 11:28:44 server sshd[1336]: Failed password for packer from 198.51.100.88 port 44140 ssh2
+Jan 15 11:29:55 server sshd[1337]: Failed password for www-data from 10.0.0.55 port 43257 ssh2
+Jan 15 11:30:11 server sshd[1338]: Accepted password for john from 192.168.1.105 port 52368 ssh2
+Jan 15 11:31:22 server sudo[1339]: john : TTY=pts/0 ; PWD=/home/john ; USER=root ; COMMAND=/sbin/reboot
+Jan 15 11:32:33 server sshd[1340]: Failed password for daemon from 203.0.113.45 port 41254 ssh2
+Jan 15 11:33:44 server sshd[1341]: Failed password for nobody from 198.51.100.88 port 44141 ssh2
+Jan 15 11:34:55 server sshd[1342]: Accepted password for alice from 192.168.1.15 port 52369 ssh2
+Jan 15 11:35:11 server sshd[1343]: Failed password for service from 10.0.0.55 port 43258 ssh2
+Jan 15 11:36:22 server sudo[1344]: alice : TTY=pts/1 ; PWD=/etc/mysql ; USER=root ; COMMAND=/bin/cat my.cnf
+Jan 15 11:37:33 server sshd[1345]: Failed password for operator from 203.0.113.45 port 41255 ssh2
+Jan 15 11:38:44 server sshd[1346]: Accepted password for bob from 192.168.1.222 port 52370 ssh2
+Jan 15 11:39:55 server sshd[1347]: Failed password for sync from 198.51.100.88 port 44142 ssh2
+Jan 15 11:40:11 server sshd[1348]: Failed password for bin from 10.0.0.55 port 43259 ssh2
+Jan 15 11:41:22 server sudo[1349]: bob : TTY=pts/2 ; PWD=/var/cache ; USER=root ; COMMAND=/bin/rm -rf *
+Jan 15 11:42:33 server sshd[1350]: Failed password for sys from 203.0.113.45 port 41256 ssh2
+Jan 15 11:43:44 server sshd[1351]: Accepted publickey for monitor from 192.168.50.201 port 52371 ssh2
+Jan 15 11:44:55 server sshd[1352]: Failed password for adm from 198.51.100.88 port 44143 ssh2
+Jan 15 11:45:11 server sshd[1353]: Failed password for lp from 10.0.0.55 port 43260 ssh2
+Jan 15 11:46:22 server sshd[1354]: Accepted password for john from 192.168.1.105 port 52372 ssh2
+Jan 15 11:47:33 server sudo[1355]: john : TTY=pts/0 ; PWD=/proc ; USER=root ; COMMAND=/bin/cat cpuinfo
+Jan 15 11:48:44 server sshd[1356]: Failed password for mail from 203.0.113.45 port 41257 ssh2
+Jan 15 11:49:55 server sshd[1357]: Failed password for news from 198.51.100.88 port 44144 ssh2
+Jan 15 11:50:11 server sshd[1358]: Accepted password for alice from 192.168.1.15 port 52373 ssh2
+Jan 15 11:51:22 server sshd[1359]: Failed password for uucp from 10.0.0.55 port 43261 ssh2
+Jan 15 11:52:33 server sudo[1360]: alice : TTY=pts/1 ; PWD=/srv ; USER=root ; COMMAND=/bin/systemctl status mysql
+Jan 15 11:53:44 server sshd[1361]: Failed password for proxy from 203.0.113.45 port 41258 ssh2
+Jan 15 11:54:55 server sshd[1362]: Accepted password for bob from 192.168.1.222 port 52374 ssh2
+Jan 15 11:55:11 server sshd[1363]: Failed password for www from 198.51.100.88 port 44145 ssh2
+Jan 15 11:56:22 server sshd[1364]: Failed password for backup from 10.0.0.55 port 43262 ssh2
+Jan 15 11:57:33 server sudo[1365]: bob : TTY=pts/2 ; PWD=/usr/local ; USER=root ; COMMAND=/bin/make install
+Jan 15 11:58:44 server sshd[1366]: Failed password for list from 203.0.113.45 port 41259 ssh2
+Jan 15 11:59:55 server sshd[1367]: Accepted publickey for operator from 192.168.50.201 port 52375 ssh2
+Jan 15 12:00:11 server sshd[1368]: Failed password for irc from 198.51.100.88 port 44146 ssh2
+Jan 15 12:01:22 server sshd[1369]: Failed password for gnats from 10.0.0.55 port 43263 ssh2
+Jan 15 12:02:33 server sshd[1370]: Accepted password for john from 192.168.1.105 port 52376 ssh2
+Jan 15 12:03:44 server sudo[1371]: john : TTY=pts/0 ; PWD=/dev ; USER=root ; COMMAND=/bin/lsof -i :8080
+Jan 15 12:04:55 server sshd[1372]: Failed password for systemd-network from 203.0.113.45 port 41260 ssh2
+Jan 15 12:05:11 server sshd[1373]: Failed password for systemd-resolve from 198.51.100.88 port 44147 ssh2
+Jan 15 12:06:22 server sshd[1374]: Accepted password for alice from 192.168.1.15 port 52377 ssh2
+Jan 15 12:07:33 server sshd[1375]: Failed password for systemd-timesync from 10.0.0.55 port 43264 ssh2
+Jan 15 12:08:44 server sudo[1376]: alice : TTY=pts/1 ; PWD=/mnt ; USER=root ; COMMAND=/bin/mount /dev/sdb1 /backup
+Jan 15 12:09:55 server sshd[1377]: Failed password for messagebus from 203.0.113.45 port 41261 ssh2
+Jan 15 12:10:11 server sshd[1378]: Accepted password for bob from 192.168.1.222 port 52378 ssh2
+Jan 15 12:11:22 server sshd[1379]: Failed password for sshd from 198.51.100.88 port 44148 ssh2
+Jan 15 12:12:33 server sshd[1380]: Failed password for ntp from 10.0.0.55 port 43265 ssh2
+Jan 15 12:13:44 server sudo[1381]: bob : TTY=pts/2 ; PWD=/boot ; USER=root ; COMMAND=/bin/grub-install /dev/sda
+Jan 15 12:14:55 server sshd[1382]: Failed password for tcpdump from 203.0.113.45 port 41262 ssh2
+Jan 15 12:15:11 server sshd[1383]: Accepted publickey for backup from 192.168.50.201 port 52379 ssh2
+Jan 15 12:16:22 server sshd[1384]: Failed password for landscape from 198.51.100.88 port 44149 ssh2
+Jan 15 12:17:33 server sshd[1385]: Failed password for pollinate from 10.0.0.55 port 43266 ssh2
+Jan 15 12:18:44 server sshd[1386]: Accepted password for john from 192.168.1.105 port 52380 ssh2
+Jan 15 12:19:55 server sshd[1387]: Failed password for saned from 203.0.113.45 port 41263 ssh2
+Jan 15 12:20:11 server sudo[1388]: john : TTY=pts/0 ; PWD=/lib ; USER=root ; COMMAND=/bin/ldconfig
+Jan 15 12:21:22 server sshd[1389]: Failed password for colord from 198.51.100.88 port 44150 ssh2
+Jan 15 12:22:33 server sshd[1390]: Accepted password for alice from 192.168.1.15 port 52381 ssh2
+Jan 15 12:23:44 server sshd[1391]: Failed password for geoclue from 10.0.0.55 port 43267 ssh2
+Jan 15 12:24:55 server sshd[1392]: Failed password for pulse from 203.0.113.45 port 41264 ssh2
+Jan 15 12:25:11 server sudo[1393]: alice : TTY=pts/1 ; PWD=/media ; USER=root ; COMMAND=/bin/umount /media/cdrom
+Jan 15 12:26:22 server sshd[1394]: Failed password for avahi from 198.51.100.88 port 44151 ssh2
+Jan 15 12:27:33 server sshd[1395]: Accepted password for bob from 192.168.1.222 port 52382 ssh2
+Jan 15 12:28:44 server sshd[1396]: Failed password for colord from 10.0.0.55 port 43268 ssh2
+Jan 15 12:29:55 server sshd[1397]: Failed password for hplip from 203.0.113.45 port 41265 ssh2
+Jan 15 12:30:11 server sudo[1398]: bob : TTY=pts/2 ; PWD=/run ; USER=root ; COMMAND=/bin/ps aux | grep ssh
+Jan 15 12:31:22 server sshd[1399]: Failed password for whoopsie from 198.51.100.88 port 44152 ssh2
+Jan 15 12:32:33 server sshd[1400]: Accepted publickey for deploy from 192.168.50.201 port 52383 ssh2
+Jan 15 12:33:44 server sshd[1401]: Failed password for kernoops from 10.0.0.55 port 43269 ssh2
+Jan 15 12:34:55 server sshd[1402]: Failed password for speech-dispatcher from 203.0.113.45 port 41266 ssh2
+Jan 15 12:35:11 server sshd[1403]: Accepted password for john from 192.168.1.105 port 52384 ssh2
+Jan 15 12:36:22 server sshd[1404]: Failed password for rtkit from 198.51.100.88 port 44153 ssh2
+Jan 15 12:37:33 server sudo[1405]: john : TTY=pts/0 ; PWD=/snap ; USER=root ; COMMAND=/snap/bin/docker version
+Jan 15 12:38:44 server sshd[1406]: Failed password for uuidd from 10.0.0.55 port 43270 ssh2
+Jan 15 12:39:55 server sshd[1407]: Accepted password for alice from 192.168.1.15 port 52385 ssh2
+Jan 15 12:40:11 server sshd[1408]: Failed password for dnsmasq from 203.0.113.45 port 41267 ssh2
+Jan 15 12:41:22 server sudo[1409]: alice : TTY=pts/1 ; PWD=/sys ; USER=root ; COMMAND=/bin/cat /sys/class/net/eth0/address
+Jan 15 12:42:33 server sshd[1410]: Failed password for libvirt-qemu from 198.51.100.88 port 44154 ssh2
+Jan 15 12:43:44 server sshd[1411]: Accepted password for bob from 192.168.1.222 port 52386 ssh2
+Jan 15 12:44:55 server sshd[1412]: Failed password for libvirt-dnsmasq from 10.0.0.55 port 43271 ssh2
+Jan 15 12:45:11 server sshd[1413]: Failed password for kvm from 203.0.113.45 port 41268 ssh2
+Jan 15 12:46:22 server sudo[1414]: bob : TTY=pts/2 ; PWD=/sbin ; USER=root ; COMMAND=/sbin/iptables -L
+Jan 15 12:47:33 server sshd[1415]: Failed password for qemu from 198.51.100.88 port 44155 ssh2
+Jan 15 12:48:44 server sshd[1416]: Accepted publickey for ci from 192.168.50.201 port 52387 ssh2
+Jan 15 12:49:55 server sshd[1417]: Failed password for lightdm from 10.0.0.55 port 43272 ssh2
+Jan 15 12:50:11 server sshd[1418]: Failed password for gdm from 203.0.113.45 port 41269 ssh2
+Jan 15 12:51:22 server sshd[1419]: Accepted password for john from 192.168.1.105 port 52388 ssh2
+Jan 15 12:52:33 server sshd[1420]: Failed password for stunnel from 198.51.100.88 port 44156 ssh2
+Jan 15 12:53:44 server sudo[1421]: john : TTY=pts/0 ; PWD=/usr/bin ; USER=root ; COMMAND=/usr/bin/netstat -tulpn
+Jan 15 12:54:55 server sshd[1422]: Failed password for Debian-exim from 10.0.0.55 port 43273 ssh2
+Jan 15 12:55:11 server sshd[1423]: Accepted password for alice from 192.168.1.15 port 52389 ssh2
+Jan 15 12:56:22 server sshd[1424]: Failed password for Debian-snmp from 203.0.113.45 port 41270 ssh2
+Jan 15 12:57:33 server sshd[1425]: Failed password for statd from 198.51.100.88 port 44157 ssh2
