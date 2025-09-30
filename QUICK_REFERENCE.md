@@ -4,7 +4,7 @@
 
 ```bash
 cd ~/cyber_investigation/logs
-bash ~/cyber_investigation/scripts/verify.sh
+bash ~/cyber_investigation/challenges/start.sh
 ```
 
 ## 📝 Challenge Quick Answers
@@ -68,8 +68,8 @@ grep -P 'eyJ[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+' suspicious.txt | wc -l
 # 15. MD5 or SHA256 hashes
 grep -P '\b[a-f0-9]{32}\b|\b[a-f0-9]{64}\b' suspicious.txt | wc -l
 
-# 16. Attack techniques
-grep -oP '(\w+\s)+(attack|scan|flood|spoofing|hijacking|injection)' network.log | sort -u | wc -l
+# 16. Service names in parentheses
+grep -oP '\(\K[A-Z][a-z]+(?=\)$)' network.log | sort -u | wc -l
 
 # 17. TLS 1.2 or 1.3
 grep -P 'TLS1\.(2|3)' network.log | wc -l

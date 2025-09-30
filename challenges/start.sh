@@ -1,6 +1,6 @@
 #!/bin/bash
-# Verification script with optional hints
-# Save this as: ~/cyber_investigation/scripts/verify.sh
+# Interactive challenge system with optional hints
+# Location: ~/cyber_investigation/challenges/start.sh
 
 # Colors for output
 RED='\033[0;31m'
@@ -15,7 +15,7 @@ cd ~/cyber_investigation/logs
 
 clear
 echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
-echo -e "${BLUE}    🔍 CYBER INVESTIGATION CHALLENGE VERIFIER 🔍${NC}"
+echo -e "${BLUE}    🔍 CYBER INVESTIGATION CHALLENGE SYSTEM 🔍${NC}"
 echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}\n"
 
 # Ask about hints
@@ -41,34 +41,45 @@ read
 
 clear
 
-# Function to check answer
-check_answer() {
+# Function to prompt and validate answer with retry loop
+prompt_and_check() {
     local challenge_num=$1
-    local user_answer="$2"
-    local expected="$3"
-    local description="$4"
-    local hint_command="$5"
-    
-    echo -e "${YELLOW}Challenge $challenge_num: $description${NC}"
-    
-    if [ "$SHOW_HINTS" == true ] && [ ! -z "$hint_command" ]; then
-        echo -e "${CYAN}Hint: Try this command: ${hint_command}${NC}"
-    fi
-    
-    if [ "$user_answer" == "$expected" ]; then
-        echo -e "${GREEN}✅ CORRECT!${NC}"
-        echo -e "${GREEN}Your answer: $user_answer${NC}\n"
-        return 1
-    else
-        echo -e "${RED}❌ INCORRECT${NC}"
-        echo -e "${RED}Your answer: $user_answer${NC}"
-        echo -e "${GREEN}Expected: $expected${NC}"
-        if [ "$SHOW_HINTS" == false ] && [ ! -z "$hint_command" ]; then
-            echo -e "${YELLOW}Need help? The command would be: ${hint_command}${NC}"
+    local question="$2"
+    local description="$3"
+    local hint_command="$4"
+
+    # Dynamically calculate the expected answer by running the command
+    local expected=$(eval "$hint_command" 2>/dev/null)
+
+    while true; do
+        clear
+        echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+        echo -e "${YELLOW}Challenge $challenge_num: $question${NC}"
+        echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}\n"
+
+        if [ "$SHOW_HINTS" == true ] && [ ! -z "$hint_command" ]; then
+            echo -e "${CYAN}Hint: Try this command: ${hint_command}${NC}\n"
         fi
-        echo ""
-        return 0
-    fi
+
+        read -p "Enter your answer (or 'skip' to skip): " user_answer
+
+        # Check if user wants to skip
+        if [ "$user_answer" == "skip" ]; then
+            echo -e "\n${YELLOW}⏭️  SKIPPED${NC}"
+            sleep 1
+            return 0
+        fi
+
+        # Check if answer is correct
+        if [ "$user_answer" == "$expected" ]; then
+            echo -e "\n${GREEN}✅ CORRECT!${NC}"
+            sleep 1
+            return 1
+        else
+            echo -e "\n${RED}❌ INCORRECT - Try again${NC}"
+            sleep 1.5
+        fi
+    done
 }
 
 score=0
@@ -79,15 +90,11 @@ echo -e "${YELLOW}LEVEL 1: BASIC GREP CHALLENGES${NC}"
 echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}\n"
 
 # Challenge 1
-echo "Challenge 1: Count lines containing IP 192.168.1.105 in access.log"
-read -p "Enter your answer: " answer
-check_answer 1 "$answer" "4" "Fixed string search for IP" "grep -F '192.168.1.105' access.log | wc -l"
+prompt_and_check 1 "Count lines containing IP 192.168.1.105 in access.log" "Fixed string search for IP" "grep -F '192.168.1.105' access.log | wc -l"
 score=$((score + $?))
 
 # Challenge 2
-echo "Challenge 2: How many failed SSH attempts are in auth.log?"
-read -p "Enter your answer: " answer
-check_answer 2 "$answer" "10" "Counting failed authentication attempts" "grep 'Failed password' auth.log | wc -l"
+prompt_and_check 2 "How many failed SSH attempts are in auth.log?" "Counting failed authentication attempts" "grep 'Failed password' auth.log | wc -l"
 score=$((score + $?))
 
 echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
@@ -95,15 +102,11 @@ echo -e "${YELLOW}LEVEL 2: REGEX PATTERN MATCHING${NC}"
 echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}\n"
 
 # Challenge 3
-echo "Challenge 3: Count unique IP addresses in access.log"
-read -p "Enter your answer: " answer
-check_answer 3 "$answer" "7" "Extract and count unique IPs with regex" "grep -oP '\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}' access.log | sort -u | wc -l"
+prompt_and_check 3 "Count unique IP addresses in access.log" "Extract and count unique IPs with regex" "grep -oP '\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}' access.log | sort -u | wc -l"
 score=$((score + $?))
 
 # Challenge 4
-echo "Challenge 4: How many ERROR or FATAL messages in application.log?"
-read -p "Enter your answer: " answer
-check_answer 4 "$answer" "5" "Multiple pattern matching" "grep -P 'ERROR|FATAL' application.log | wc -l"
+prompt_and_check 4 "How many ERROR or FATAL messages in application.log?" "Multiple pattern matching" "grep -P 'ERROR|FATAL' application.log | wc -l"
 score=$((score + $?))
 
 echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
@@ -111,15 +114,11 @@ echo -e "${YELLOW}LEVEL 3: PIPELINE MASTERY${NC}"
 echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}\n"
 
 # Challenge 5
-echo "Challenge 5: Find the attacker IP that made the most requests in access.log"
-read -p "Enter the IP address: " answer
-check_answer 5 "$answer" "10.0.0.55" "Identify most active IP" "grep -oP '\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}' access.log | sort | uniq -c | sort -rn | head -1 | awk '{print \$2}'"
+prompt_and_check 5 "Find the attacker IP that made the most requests in access.log" "Identify most active IP" "grep -oP '\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}' access.log | sort | uniq -c | sort -rn | head -1 | awk '{print \$2}'"
 score=$((score + $?))
 
 # Challenge 6
-echo "Challenge 6: Count suspicious user agents (curl, wget, python, scanner) in access.log"
-read -p "Enter your answer: " answer
-check_answer 6 "$answer" "7" "Detect suspicious user agents" "grep -P 'curl|wget|python|scanner' access.log | wc -l"
+prompt_and_check 6 "Count suspicious user agents (curl, wget, python, scanner) in access.log" "Detect suspicious user agents" "grep -P 'curl|wget|python|scanner' access.log | wc -l"
 score=$((score + $?))
 
 echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
@@ -127,36 +126,28 @@ echo -e "${YELLOW}LEVEL 4: SECURITY INVESTIGATION${NC}"
 echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}\n"
 
 # Challenge 7
-echo "Challenge 7: How many potential SQL injection attempts in access.log?"
 if [ "$SHOW_HINTS" == true ]; then
     echo -e "${CYAN}Look for SQL keywords or special characters used in injections${NC}"
 fi
-read -p "Enter your answer: " answer
-check_answer 7 "$answer" "1" "Detect SQL injection patterns" "grep -P \"(--|'|union|select)\" access.log | wc -l"
+prompt_and_check 7 "How many potential SQL injection attempts in access.log?" "Detect SQL injection patterns" "grep -P \"(--|'|union|select)\" access.log | wc -l"
 score=$((score + $?))
 
 # Challenge 8
-echo "Challenge 8: Count base64 encoded strings in suspicious.txt"
 if [ "$SHOW_HINTS" == true ]; then
     echo -e "${CYAN}Base64 strings contain A-Z, a-z, 0-9, +, / and end with = padding${NC}"
 fi
-read -p "Enter your answer: " answer
-check_answer 8 "$answer" "5" "Find base64 encoded data" "grep -P '[A-Za-z0-9+/]{20,}={0,2}' suspicious.txt | wc -l"
+prompt_and_check 8 "Count base64 encoded strings in suspicious.txt" "Find base64 encoded data" "grep -P '[A-Za-z0-9+/]{20,}={0,2}' suspicious.txt | wc -l"
 score=$((score + $?))
 
 # Challenge 9
-echo "Challenge 9: Which user successfully logged in the most in auth.log?"
-read -p "Enter username: " answer
-check_answer 9 "$answer" "john" "Identify most frequent successful login" "grep 'Accepted' auth.log | grep -oP 'for \\\\K\\\\w+' | sort | uniq -c | sort -rn | head -1 | awk '{print \$2}'"
+prompt_and_check 9 "Which user successfully logged in the most in auth.log?" "Identify most frequent successful login" "grep 'Accepted' auth.log | grep -oP 'for \\K\\w+' | sort | uniq -c | sort -rn | head -1 | awk '{print \$2}'"
 score=$((score + $?))
 
 # Challenge 10
-echo "Challenge 10: Count unique IPs attempting HTTP methods other than GET in access.log"
 if [ "$SHOW_HINTS" == true ]; then
     echo -e "${CYAN}Look for POST, PUT, DELETE methods${NC}"
 fi
-read -p "Enter count: " answer
-check_answer 10 "$answer" "2" "Detect non-GET HTTP methods" "grep -P '(POST|PUT|DELETE)' access.log | grep -oP '\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}' | sort -u | wc -l"
+prompt_and_check 10 "Count unique IPs attempting HTTP methods other than GET in access.log" "Detect non-GET HTTP methods" "grep -P '(POST|PUT|DELETE)' access.log | grep -oP '\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}' | sort -u | wc -l"
 score=$((score + $?))
 
 echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
@@ -164,93 +155,73 @@ echo -e "${YELLOW}LEVEL 5: ADVANCED REGEX MASTERY${NC}"
 echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}\n"
 
 # Challenge 11
-echo "Challenge 11: Extract all email addresses from suspicious.txt and count unique domains"
 if [ "$SHOW_HINTS" == true ]; then
     echo -e "${CYAN}Match email pattern, extract domain after @, count unique${NC}"
 fi
-read -p "Enter count: " answer
-check_answer 11 "$answer" "4" "Extract and count unique email domains" "grep -oP '[a-zA-Z0-9._%+-]+@\\K[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}' suspicious.txt | sort -u | wc -l"
+prompt_and_check 11 "Extract all email addresses from suspicious.txt and count unique domains" "Extract and count unique email domains" "grep -oP '[a-zA-Z0-9._%+-]+@\\K[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}' suspicious.txt | sort -u | wc -l"
 score=$((score + $?))
 
 # Challenge 12
-echo "Challenge 12: How many lines contain phone numbers in any format in suspicious.txt?"
 if [ "$SHOW_HINTS" == true ]; then
     echo -e "${CYAN}Match patterns like +1-555-0123, (555) 456-7890, 555.234.5678${NC}"
 fi
-read -p "Enter count: " answer
-check_answer 12 "$answer" "3" "Match various phone number formats" "grep -P '(\\+\\d{1,2}[- ])?\\(?(\\d{3})\\)?[- .]?(\\d{3})[- .]?(\\d{4})' suspicious.txt | wc -l"
+prompt_and_check 12 "How many lines contain phone numbers in any format in suspicious.txt?" "Match various phone number formats" "grep -P '(\\+\\d{1,2}[- ])?\\(?(\\d{3})\\)?[- .]?(\\d{3})[- .]?(\\d{4})' suspicious.txt | wc -l"
 score=$((score + $?))
 
 # Challenge 13
-echo "Challenge 13: Count lines with IPv6 addresses in suspicious.txt"
 if [ "$SHOW_HINTS" == true ]; then
     echo -e "${CYAN}IPv6 has format like 2001:0db8:85a3::8a2e:0370:7334${NC}"
 fi
-read -p "Enter count: " answer
-check_answer 13 "$answer" "1" "Detect IPv6 address patterns" "grep -P '([0-9a-fA-F]{0,4}:){2,7}[0-9a-fA-F]{0,4}' suspicious.txt | wc -l"
+prompt_and_check 13 "Count IPv6 addresses in suspicious.txt" "Detect IPv6 address patterns" "grep -oP '(\\b([0-9a-fA-F]{4}:){7}[0-9a-fA-F]{4}\\b|\\b[0-9a-fA-F]{4}::[0-9a-fA-F]{1,4}\\b)' suspicious.txt | wc -l"
 score=$((score + $?))
 
 # Challenge 14
-echo "Challenge 14: Find lines containing JWT tokens (starting with eyJ) in suspicious.txt"
 if [ "$SHOW_HINTS" == true ]; then
     echo -e "${CYAN}JWT tokens start with eyJ and contain base64-like characters${NC}"
 fi
-read -p "Enter count: " answer
-check_answer 14 "$answer" "1" "Match JWT token pattern" "grep -P 'eyJ[A-Za-z0-9_-]+\\.[A-Za-z0-9_-]+' suspicious.txt | wc -l"
+prompt_and_check 14 "Find lines containing JWT tokens (starting with eyJ) in suspicious.txt" "Match JWT token pattern" "grep -P 'eyJ[A-Za-z0-9_-]+\\.[A-Za-z0-9_-]+' suspicious.txt | wc -l"
 score=$((score + $?))
 
 # Challenge 15
-echo "Challenge 15: Count lines in suspicious.txt with MD5 or SHA256 hashes"
 if [ "$SHOW_HINTS" == true ]; then
     echo -e "${CYAN}MD5 is 32 hex chars, SHA256 is 64 hex chars${NC}"
 fi
-read -p "Enter count: " answer
-check_answer 15 "$answer" "2" "Match cryptographic hash patterns" "grep -P '\\b[a-f0-9]{32}\\b|\\b[a-f0-9]{64}\\b' suspicious.txt | wc -l"
+prompt_and_check 15 "Count lines in suspicious.txt with MD5 or SHA256 hashes" "Match cryptographic hash patterns" "grep -P '\\b[a-f0-9]{32}\\b|\\b[a-f0-9]{64}\\b' suspicious.txt | wc -l"
 score=$((score + $?))
 
 # Challenge 16
-echo "Challenge 16: How many unique attack techniques mentioned in network.log?"
 if [ "$SHOW_HINTS" == true ]; then
-    echo -e "${CYAN}Look for 'attack' or 'scan' keywords, extract technique names${NC}"
+    echo -e "${CYAN}Use lookbehind \\K and lookahead (?=) to extract service names${NC}"
 fi
-read -p "Enter count: " answer
-check_answer 16 "$answer" "15" "Extract attack technique names" "grep -oP '(\\w+\\s)+(attack|scan|flood|spoofing|hijacking|injection)' network.log | sort -u | wc -l"
+prompt_and_check 16 "Count unique service names in parentheses at end of lines in network.log" "Extract service names using Perl regex assertions" "grep -oP '\\(\\K[A-Z][a-z]+(?=\\)\$)' network.log | sort -u | wc -l"
 score=$((score + $?))
 
 # Challenge 17
-echo "Challenge 17: Count connections in network.log using TLS version 1.2 or 1.3"
 if [ "$SHOW_HINTS" == true ]; then
     echo -e "${CYAN}Match TLS1.2 or TLS1.3 in the log entries${NC}"
 fi
-read -p "Enter count: " answer
-check_answer 17 "$answer" "2" "Match specific TLS versions" "grep -P 'TLS1\\.(2|3)' network.log | wc -l"
+prompt_and_check 17 "Count connections in network.log using TLS version 1.2 or 1.3" "Match specific TLS versions" "grep -P 'TLS1\\.(2|3)' network.log | wc -l"
 score=$((score + $?))
 
 # Challenge 18
-echo "Challenge 18: Find all lines in application.log with timestamps between 10:50 and 11:10"
 if [ "$SHOW_HINTS" == true ]; then
     echo -e "${CYAN}Match time pattern HH:MM where hour is 10 (minutes 50-59) or 11 (minutes 00-10)${NC}"
 fi
-read -p "Enter count: " answer
-check_answer 18 "$answer" "13" "Match time range with regex" "grep -P '(10:5[0-9]|11:0[0-9]|11:10):' application.log | wc -l"
+prompt_and_check 18 "Find all lines in application.log with timestamps between 10:50 and 11:10" "Match time range with regex" "grep -P '(10:5[0-9]|11:0[0-9]|11:10):' application.log | wc -l"
 score=$((score + $?))
 
 # Challenge 19
-echo "Challenge 19: Count unique MAC addresses in suspicious.txt"
 if [ "$SHOW_HINTS" == true ]; then
     echo -e "${CYAN}MAC format: XX:XX:XX:XX:XX:XX or XX-XX-XX-XX-XX-XX${NC}"
 fi
-read -p "Enter count: " answer
-check_answer 19 "$answer" "3" "Extract and count unique MAC addresses" "grep -oP '([0-9A-Fa-f]{2}[:-]){5}[0-9A-Fa-f]{2}' suspicious.txt | sort -u | wc -l"
+prompt_and_check 19 "Count unique MAC addresses in suspicious.txt" "Extract and count unique MAC addresses" "grep -oP '([0-9A-Fa-f]{2}[:-]){5}[0-9A-Fa-f]{2}' suspicious.txt | sort -u | wc -l"
 score=$((score + $?))
 
 # Challenge 20
-echo "Challenge 20: Find the most common HTTP status code in access.log"
 if [ "$SHOW_HINTS" == true ]; then
     echo -e "${CYAN}Status codes are 3-digit numbers after the HTTP version${NC}"
 fi
-read -p "Enter status code: " answer
-check_answer 20 "$answer" "200" "Extract and find most frequent status code" "grep -oP 'HTTP/\\d\\.\\d\" \\K\\d{3}' access.log | sort | uniq -c | sort -rn | head -1 | awk '{print \$2}'"
+prompt_and_check 20 "Find the most common HTTP status code in access.log" "Extract and find most frequent status code" "grep -oP 'HTTP/\\d\\.\\d\" \\K\\d{3}' access.log | sort | uniq -c | sort -rn | head -1 | awk '{print \$2}'"
 score=$((score + $?))
 
 echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
@@ -288,4 +259,4 @@ if [ "$SHOW_HINTS" == false ] && [ $score -lt $total ]; then
     echo -e "${CYAN}💡 Tip: Run with hints enabled to see the commands for challenges you missed${NC}"
 fi
 
-echo -e "\n${YELLOW}Run again? Just type: ./verify.sh${NC}"
+echo -e "\n${YELLOW}Run again? Just type: bash ~/cyber_investigation/challenges/start.sh${NC}"

@@ -81,19 +81,23 @@ Completely rewritten with:
 - Resource links
 - Repository structure diagram
 
-### 4. Updated Verification System
+### 4. Reorganized Challenge System
 
+- Moved challenges to dedicated `challenges/` directory
+- Renamed `verify.sh` → `start.sh` (more intuitive)
+- Renamed `answers.sh` → `solutions.sh` (clearer naming)
 - Total challenges increased from 10 to 20
 - Updated scoring thresholds (20, 16, 12 breakpoints)
 - Added Level 5 section header
 - All new challenges include hints
 - Progressive difficulty curve maintained
+- Scripts are location-independent (work from any directory)
 
-### 5. Updated Answer Key
+### 5. Updated Solution Key
 
 - Added complete solutions for challenges 11-20
 - Organized by level with clear section headers
-- Each answer shows command and live output
+- Each solution shows command and live output
 
 ## 📊 Statistics
 
@@ -168,10 +172,11 @@ After completing all challenges, you'll be proficient in:
 
 ## 🎓 Next Steps
 
-1. Run `bash ~/cyber_investigation/scripts/verify.sh` to test all 20 challenges
+1. Run `bash ~/cyber_investigation/challenges/start.sh` to test all 20 challenges
 2. Try Expert Mode (no hints) to verify mastery
-3. Add your own log entries to create custom scenarios
-4. Practice explaining your commands out loud for interview readiness
+3. Check solutions with `bash ~/cyber_investigation/challenges/solutions.sh`
+4. Add your own log entries to create custom scenarios
+5. Practice explaining your commands out loud for interview readiness
 
 ---
 

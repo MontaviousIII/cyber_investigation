@@ -41,16 +41,16 @@ grep -oP '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}' access.log | sort -u
 
 ### 4. Take the challenge
 ```bash
-bash ~/cyber_investigation/scripts/verify.sh
+bash ~/cyber_investigation/challenges/start.sh
 ```
 
 Choose between:
 - **Hints mode** (Recommended for first attempt) - Shows commands to guide you
 - **Expert mode** - Test your knowledge without hints
 
-### 5. Check answers (if stuck)
+### 5. Check solutions (if stuck)
 ```bash
-bash ~/cyber_investigation/scripts/answers.sh
+bash ~/cyber_investigation/challenges/solutions.sh
 ```
 
 ## 📊 Challenge Breakdown
@@ -100,16 +100,18 @@ bash ~/cyber_investigation/scripts/answers.sh
 ```
 cyber_investigation/
 ├── README.md                   # This file
+├── QUICK_REFERENCE.md          # One-page command reference
+├── ENHANCEMENTS.md             # Changelog and improvements
 ├── logs/                       # Training log files
 │   ├── access.log             # HTTP access logs (62+ entries)
 │   ├── auth.log               # SSH authentication logs (68+ entries)
 │   ├── application.log        # Application logs (70+ entries)
 │   ├── network.log            # Network traffic logs (62+ entries)
 │   └── suspicious.txt         # Suspicious patterns (54+ entries)
-├── scripts/
-│   ├── verify.sh              # Interactive challenge verifier
-│   └── answers.sh             # Answer key with commands
-└── challenges/                 # (Reserved for future challenges)
+├── challenges/                 # Challenge system
+│   ├── start.sh               # Interactive challenge runner
+│   └── solutions.sh           # Complete answer key
+└── scripts/                    # (Reserved for utility scripts)
 ```
 
 ## 💡 Pro Tips for Interview Success
@@ -288,11 +290,12 @@ Found a bug or want to add more challenges? Feel free to:
 
 ## 🎯 Next Steps
 
-1. **Complete all 20 challenges in Expert Mode**
-2. **Practice without looking at answers**
-3. **Time yourself** - Can you complete all challenges in under 30 minutes?
-4. **Create your own challenges** by adding complex patterns to the logs
-5. **Interview with confidence!**
+1. **Run the challenges**: `bash ~/cyber_investigation/challenges/start.sh`
+2. **Complete all 20 challenges in Expert Mode**
+3. **Practice without looking at solutions**
+4. **Time yourself** - Can you complete all challenges in under 30 minutes?
+5. **Create your own challenges** by adding complex patterns to the logs
+6. **Interview with confidence!**
 
 ---
 

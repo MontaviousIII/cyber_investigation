@@ -1,5 +1,6 @@
 #!/bin/bash
-# ANSWER KEY - Use this to verify your manual attempts
+# SOLUTIONS - Complete answer key with commands and expected output
+# Location: ~/cyber_investigation/challenges/solutions.sh
 
 cd ~/cyber_investigation/logs
 
@@ -70,9 +71,9 @@ echo "Challenge 15: Count lines with MD5 or SHA256 hashes in suspicious.txt"
 echo "Command: grep -P '\\b[a-f0-9]{32}\\b|\\b[a-f0-9]{64}\\b' suspicious.txt | wc -l"
 echo "Answer: $(grep -P '\b[a-f0-9]{32}\b|\b[a-f0-9]{64}\b' suspicious.txt | wc -l)"
 echo ""
-echo "Challenge 16: Count unique attack techniques in network.log"
-echo "Command: grep -oP '(\\w+\\s)+(attack|scan|flood|spoofing|hijacking|injection)' network.log | sort -u | wc -l"
-echo "Answer: $(grep -oP '(\w+\s)+(attack|scan|flood|spoofing|hijacking|injection)' network.log | sort -u | wc -l)"
+echo "Challenge 16: Count unique service names in parentheses at end of lines in network.log"
+echo "Command: grep -oP '\\(\\K[A-Z][a-z]+(?=\\)\$)' network.log | sort -u | wc -l"
+echo "Answer: $(grep -oP '\(\K[A-Z][a-z]+(?=\)$)' network.log | sort -u | wc -l)"
 echo ""
 echo "Challenge 17: Count TLS 1.2 or 1.3 connections in network.log"
 echo "Command: grep -P 'TLS1\\.(2|3)' network.log | wc -l"
